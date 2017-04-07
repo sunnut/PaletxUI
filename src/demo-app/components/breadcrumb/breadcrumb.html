@@ -1,0 +1,69 @@
+<header>
+    <h1>Breadcrumb 面包屑</h1>
+    <label>告诉用户他们目前在什么位置以及如何返回。用来表达内容归属关系的界面元素，也就是我们经常看到的“主分类/一级分类/二级分类/三级分类/…/最终内容页面“这样的样式。</label>
+</header>
+<section>
+    <h2>使用绝对路由的面包屑</h2>
+    <div>
+        <px-breadcrumb [links]="absoluteLinks"></px-breadcrumb>
+    </div>
+    <px-code>
+        <html-code>{{absouteLinksHtmlCode}}</html-code>
+        <ts-code>{{absouteLinksTsCode}}</ts-code>
+    </px-code>
+</section>
+<section>
+    <h2>使用相对路由的面包屑</h2>
+    <div>
+        <px-breadcrumb [links]="relativeLinks"></px-breadcrumb>
+    </div>
+    <px-code>
+        <html-code>{{relativeLinksHtmlCode}}</html-code>
+        <ts-code>{{relativeLinksTsCode}}</ts-code>
+    </px-code>
+</section>
+<section>
+    <h2>配置项参数</h2>
+    <table class="demo">
+        <thead>
+        <tr>
+            <th width="20%">属性</th>
+            <th width="10%">类型</th>
+            <th width="10%">缺省值</th>
+            <th width="60%">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>links</td>
+            <td>对象数组</td>
+            <td>空数组</td>
+            <td>link对象包含四个属性配置：name-显示的名称，url-跳转的路由，relative-是否为相对路由， params-路由参数。 当relative为true时，url使用相对路由。默认使用绝对路由。</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>string</td>
+            <td>空</td>
+            <td>显示的名称</td>
+        </tr>
+        <tr>
+            <td>url</td>
+            <td>string</td>
+            <td>空</td>
+            <td>跳转的路由</td>
+        </tr>
+        <tr>
+            <td>params</td>
+            <td>对象</td>
+            <td>空</td>
+            <td>键值对,附带参数</td>
+        </tr>
+        <tr>
+            <td>relative</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>当relative为true时，url使用相对路由。默认使用绝对路由。</td>
+        </tr>
+        </tbody>
+    </table>
+</section>

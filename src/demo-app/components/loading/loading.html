@@ -1,0 +1,40 @@
+<header>
+    <h2>加载中</h2>
+    <label>操作时间超过2秒，应有loading提示（不出现完全空白的情况）</label>
+    <label>说明：72px用于页面级加载; 36px用于文本、卡片内、容器、表格加载; 18px区域面积小内容加载，如：浏览器TAB标签前面的图标</label>
+</header>
+<section>
+    <div style="display: inline-block;width: 200px;">
+        <px-loading [type]="'max'"></px-loading>
+    </div>
+    <div style="display: inline-block;width:200px;">
+        <px-loading [type]="'medium'"></px-loading>
+    </div>
+    <div style="display: inline-block;width: 200px;">
+        <px-loading [type]="'min'"></px-loading>
+    </div>
+</section>
+<px-code>
+    <html-code>{{loadingCode}}</html-code>
+</px-code>
+<section>
+    <h2>配置项参数</h2>
+    <table class="demo">
+        <thead>
+        <tr>
+            <th width="20%">属性</th>
+            <th width="10%">类型</th>
+            <th width="10%">缺省值</th>
+            <th width="60%">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>type</td>
+            <td>字符串</td>
+            <td></td>
+            <td>加载场景类型: max, medium, min</td>
+        </tr>
+        </tbody>
+    </table>
+</section>

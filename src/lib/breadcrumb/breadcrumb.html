@@ -1,0 +1,6 @@
+<ol class="px-breadcrumb">
+    <li *ngFor="let link of links;let isLast = last">
+        <a href="javascript:;" (click)="goTo(link.url, link.relative,link.params)" *ngIf="link.url&&!isLast">{{link.name | translate}}</a><span
+            *ngIf="!link.url||isLast" [ngClass]="{curLink:isLast}">{{link.name | translate}}</span><span class="divider" *ngIf="!isLast">/</span>
+    </li>
+</ol>

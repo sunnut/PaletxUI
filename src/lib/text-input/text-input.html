@@ -1,0 +1,41 @@
+<div class="text-input"
+     [class.text-input-with-hint]="isShowHintLabel"
+     [class.short-text-input]="shortInput"
+     [class.text-input-with-unit]="hasUnit"
+     [class.text-input-with-prefix]="hasPrefix"
+    [class.input-span-focus]="isFocus">
+    <div *ngIf="hasPrefix" class="text-input-prefix" [style.width]="prefixWidth">{{prefix}}</div><span class="input-span">
+        <input #input
+           [disabled]="disabled"
+           [id]="inputId"
+           [name]="name"
+           [attr.max]="max"
+           [attr.maxlength]="maxLength"
+           [attr.min]="min"
+           [attr.minlength]="minLength"
+           [attr.tabindex]="tabIndex"
+           [attr.pattern]="pattern"
+           [placeholder]="placeholder"
+           [readonly]="readOnly"
+           [required]="required"
+           [type]="inputType"
+           [(ngModel)]="value"
+           (focus)="_handleFocus($event)"
+           (blur)="_handleBlur($event)"
+           (change)="_handleChange($event)"
+           (keydown)="onInputKeydown($event)" (keyup)="onInput($event,input.value)"
+           (keypress)="onInputKeyPress($event)" [style.width]="inputWidth" validate-on-blur/>
+        <a class="input-spinner-up" *ngIf="type === 'number'"
+           (mouseleave)="onUpButtonMouseleave($event)" (mousedown)="onUpButtonMousedown($event,input)"
+            (mouseup)="onUpButtonMouseup($event)">
+            <span class="caret-up"></span>
+        </a>
+        <a class="input-spinner-down" *ngIf="type === 'number'"
+            (mouseleave)="onDownButtonMouseleave($event)" (mousedown)="onDownButtonMousedown($event,input)"
+            (mouseup)="onDownButtonMouseup($event)">
+            <span class="caret-down"></span>
+        </a>
+    </span><div *ngIf="hasUnit" class="text-input-unit" [style.width]="unitWidth">{{unit}}</div>
+    <div *ngIf="!required && !notShowOption" class="text-input-optional">(可选)</div>
+    <div *ngIf="isShowHintLabel" class="text-input-hint">{{hintLabel}}</div>
+</div>

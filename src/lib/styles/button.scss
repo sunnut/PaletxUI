@@ -1,0 +1,225 @@
+@import 'common';
+
+@mixin button-base {
+  @include font($font-size-normal, $font-gray-light);
+  display: inline-block;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+  padding: 0 12px;
+}
+
+@mixin std-button-base {
+  @include button-base();
+  min-width: 100px;
+  height: 36px;
+}
+
+@mixin sm-button-base {
+  @include button-base();
+  min-width: 80px;
+  height: 28px;
+}
+
+.px-primary-button,
+.px-create-button {
+  @include std-button-base();
+  border: 0;
+  color: $white-normal;
+  background-color: $green-normal;
+  &:hover {
+    background-color: $green-dark;
+  }
+  &:active {
+    background-color: $green-darkest;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.px-button-icon {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  line-height: 12px;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+
+.px-create-button-icon {
+  background: url('/assets/images/btn_icon_create.png') no-repeat;
+}
+
+.px-confirm-button,
+.px-normal-button,
+.px-common-button {
+  @include std-button-base();
+  border: 0;
+  color: $white-normal;
+  background-color: $blue-normal;
+  &:hover {
+    background-color: $blue-dark;
+  }
+  &:active {
+    background-color: $blue-darkest;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.px-cancel-button {
+  @include std-button-base();
+  border: 1px solid $gray-grade-6;
+  color: $blue-normal;
+  background-color: $white-normal;
+  &:hover {
+    background-color: $gray-grade-9;
+  }
+  &:active {
+    background-color: $gray-grade-8;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.px-danger-button,
+.px-warning-button {
+  @include std-button-base();
+  border: 0;
+  color: $white-normal;
+  background-color: $red-normal;
+  &:hover {
+    background-color: $red-dark;
+  }
+  &:active {
+    background-color: $red-darkest;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.px-table-footer-button {
+  @include sm-button-base();
+  border: 1px solid $gray-grade-4;
+  background-color: $white-normal;
+  &:hover {
+    background-color: $gray-grade-9;
+  }
+  &:active {
+    background-color: $gray-grade-8;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.px-title-button {
+  @include std-button-base();
+  color: $blue-normal;
+  border: 1px solid $gray-grade-6;
+  background-color: $white-normal;
+  &:hover {
+    background-color: $gray-grade-9;
+  }
+  &:active {
+    color: $white-normal;
+    border: 0;
+    background-color: $blue-normal;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+//.px-table-split-button {
+//  @include sm-button-base();
+//  border: 1px solid $gray-grade-4;
+//  background-color: $white-normal;
+//  &:active {
+//    background-color: $gray-grade-9;
+//  }
+//  &:disabled {
+//    border: 1px solid $gray-grade-6;
+//    opacity: 0.5;
+//    cursor: not-allowed;
+//  }
+//  & + .table-font-color,
+//  & + .table-font-color li a {
+//    color: $font-gray-light;
+//  }
+//  & + .table-font-color li a:hover {
+//    background-color: $gray-grade-8;
+//    border: 0;
+//  }
+//}
+//
+//.px-title-split-button {
+//  @include std-button-base();
+//  color: $blue-normal;
+//  border: 1px solid $gray-grade-6;
+//  background-color: $white-normal;
+//  &:hover {
+//    background-color: $gray-grade-9;
+//  }
+//  &:disabled {
+//    opacity: 0.5;
+//    cursor: not-allowed;
+//  }
+//}
+
+//.caret {
+//  display: inline-block;
+//  width: 0;
+//  height: 0;
+//  margin-left: 2px;
+//  vertical-align: middle;
+//  border-top: 4px dashed;
+//  border-top: 4px solid \9;
+//  border-right: 4px solid transparent;
+//  border-left: 4px solid transparent;
+//}
+//
+//.btn-group.open .dropdown-toggle {
+//  -webkit-box-shadow: inset 0 0 0 $white-normal;
+//  box-shadow: inset 0 0 0 $white-normal;
+//}
+//
+//.dropdown-menu {
+//  color: $blue-normal;
+//  position: absolute;
+//  top: 100%;
+//  left: 0;
+//  z-index: 1000;
+//  display: none;
+//  float: left;
+//  min-width: 100px;
+//  padding: 5px 0;
+//  margin: 2px 0 0;
+//  font-size: 14px;
+//  text-align: left;
+//  list-style: none;
+//  background-color: $white-normal;
+//  -webkit-background-clip: padding-box;
+//  background-clip: padding-box;
+//  border: 1px solid #ccc;
+//  border-radius: 4px;
+//  width: auto;
+//  & li a {
+//    color: $blue-normal;
+//    &:hover {
+//      background-color: $gray-grade-9;
+//      border: 0;
+//    }
+//  }
+//}

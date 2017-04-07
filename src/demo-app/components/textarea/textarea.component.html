@@ -1,0 +1,63 @@
+<header>
+    <h1>多行文本框</h1>
+    <label>多行文本框用于显示、输入、编辑文本</label>
+</header>
+<section>
+    <h2>文本输入</h2>
+    <section>
+        <div>
+            <px-textarea [(textContext)]="inputcontent" [tipContent]="'提示性描述'" [maxContext]="contentNumber"></px-textarea>
+        </div>
+        <h2>失去焦点获取文本:</h2>
+        <div *ngIf="inputcontent">{{inputcontent}}</div>
+        <div *ngIf="!inputcontent">NULL</div>
+    </section>
+    <px-code>
+        <html-code>{{textareaCode}}</html-code>
+    </px-code>
+</section>
+<section>
+    <h2>配置项参数</h2>
+    <table class="demo">
+        <thead>
+        <tr>
+            <th width="20%">属性</th>
+            <th width="10%">类型</th>
+            <th width="10%">缺省值</th>
+            <th width="60%">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>textContext</td>
+            <td>string</td>
+            <td>null</td>
+            <td>双向绑定变量.</td>
+        </tr>
+        <tr>
+            <td>inputcontent</td>
+            <td>string</td>
+            <td>null</td>
+            <td>预先输入的文本.</td>
+        </tr>
+        <tr>
+            <td>tipContent</td>
+            <td>string</td>
+            <td>提示性描述</td>
+            <td>提示性描述.</td>
+        </tr>
+        <tr>
+            <td>maxContext</td>
+            <td>number</td>
+            <td>300</td>
+            <td>数据绑定变量.</td>
+        </tr>
+        <tr>
+            <td>contentNumber</td>
+            <td>number</td>
+            <td>300</td>
+            <td>最大字符个数.</td>
+        </tr>
+        </tbody>
+    </table>
+</section>

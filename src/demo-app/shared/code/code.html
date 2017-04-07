@@ -1,0 +1,19 @@
+<section>
+    <px-tabset>
+        <px-tab heading="html" *ngIf="htmlCode !== undefined">
+            <pre>
+                <code class="language-markup" pCode><ng-content select="html-code"></ng-content></code>
+            </pre>
+        </px-tab>
+        <px-tab heading="typescript" *ngIf="tsCode !== undefined">
+            <pre>
+                <code class="language-typescript" pCode><ng-content select="ts-code"></ng-content></code>
+            </pre>
+        </px-tab>
+        <px-tab heading="css" *ngIf="cssCode !== undefined">
+            <pre>
+                <code class="language-css" pCode><ng-content select="css-code"></ng-content></code>
+            </pre>
+        </px-tab>
+    </px-tabset>
+</section>

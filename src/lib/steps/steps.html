@@ -1,0 +1,55 @@
+<div [ngClass]="{'px-ui-steps-display-vertical':!horizon}" [id]="pxStpesId">
+    <!----------------------------------------------------the below code is for ht horizon steps------------------------------------------------->
+    <div *ngIf="horizon" class="px-ui-steps">
+        <ul role="tablist" class="px-ui-horizon-ul-horizon">
+            <li *ngFor="let item of model; let i = index" class="px-ui-steps-li" #menuitem>
+     <!------------------------------------------------------Currently active begin-------------------------------------------------------------------->
+                <div *ngIf="i===activeIndex"  class="px-ui-menuitem-div-active">
+                    <span class="px-ui-steps-number-active">{{i + 1}}</span>
+                    <span class="px-ui-steps-title-active">{{item.label}}</span>
+                </div>
+                <div *ngIf="i===activeIndex" class="px-ui-underline-active" [ngStyle]="setUserInputStyleHorizon()||setCurrentStylesHorizon()"></div>
+     <!------------------------------------------------------Currently active end-------------------------------------------------------------------->
+     <!------------------------------------------------------Currently not active begin-------------------------------------------------------------------->
+                <div *ngIf="i > activeIndex" class="px-ui-menuitem-div-passive">
+                    <span class="px-ui-steps-number-passive">{{i + 1}}</span>
+                    <span class="px-ui-steps-title-passive">{{item.label}}</span>
+                </div>
+                <div *ngIf="i > activeIndex" class="px-ui-underline-passive" [ngStyle]="setUserInputStyleHorizon()||setCurrentStylesHorizon()"></div>
+     <!------------------------------------------------------Currently not active end-------------------------------------------------------------------->
+     <!------------------------------------------------------Has been visited begin-------------------------------------------------------------------->
+                <div *ngIf="i < activeIndex" class="px-ui-menuitem-div-visited">
+                    <div class="px-ui-steps-number-visited">
+                        <label class="px-ui-steps-number-visited-tick"></label>
+                    </div>
+                    <span class="px-ui-steps-title-visited">{{item.label}}</span>
+                </div>
+                <div *ngIf="i < activeIndex" class="px-ui-underline-passive" [ngStyle]="setUserInputStyleHorizon()||setCurrentStylesHorizon()"></div>
+    <!------------------------------------------------------Has been visited end-------------------------------------------------------------------->
+            </li>
+        </ul>
+    </div>
+    <!----------------------------------------------------the below code is for ht vertical steps------------------------------------------------->
+    <div *ngIf="!horizon" class="px-ui-steps-vertical">
+        <ul role="tablist" class="px-ui-horizon-ul-vertical">
+            <li *ngFor="let item of model; let i = index" class="px-ui-steps-li-vertical" #menuitem>
+                <!--This is for the visited node-->
+                <div  *ngIf="i < activeIndex" class="px-ui-steps-number-visited-vertical">
+                    <label class="px-ui-steps-number-visited-tick-vertical"></label>
+                    <span class="px-ui-steps-title-visited-vertical" >{{item.label}}</span>
+                </div>
+                <div *ngIf=" i <  activeIndex && i!== itemLength " class="px-ui-underline-visited-vertical" [ngStyle]="setUserInputStyleVertical()"></div>
+                <!--This is for the current active node-->
+                <div  *ngIf="i === activeIndex" class="px-ui-steps-number-active-vertical" [ngStyle]="fixBugForPaddingVertical()">{{i + 1}}
+                    <span class="px-ui-steps-title-active-vertical">{{item.label}}</span>
+                </div>
+                <div *ngIf="i === activeIndex && i !== itemLength " class="px-ui-underline-active-vertical"  [ngStyle]="setUserInputStyleVertical()||setCurrentStylesVertical()" ></div>
+                <!--This is for nodes that have not been visited-->
+                <div *ngIf="i > activeIndex"  class="px-ui-steps-number-passive-vertical" [ngStyle]="fixBugForPaddingVertical()">{{i + 1}}
+                    <span class="px-ui-steps-title-passive-vertical">{{item.label}}</span>
+                </div>
+                <div *ngIf="i>0&&i > activeIndex && i !== itemLength "  class="px-ui-underline-passive-vertical" [ngStyle]="setUserInputStyleVertical()"></div>
+            </li>
+        </ul>
+    </div>
+</div>

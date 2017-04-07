@@ -1,0 +1,25 @@
+.backtop {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  button {
+    padding: 0;
+    border: none;
+    background: white url('backtop.svg');
+    height: 40px;
+    width: 40px;
+    &:hover {
+      background: white url('backtop_hover.svg');
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.backtop-show {
+  opacity: 1 !important;
+}
+

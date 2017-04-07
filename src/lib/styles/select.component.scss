@@ -1,0 +1,277 @@
+@import 'common';
+
+px-select {
+  &:disabled {
+    background-color: $gray-grade-8;
+    border: 1px solid $gray-grade-4;
+    font-size: 14px;
+    color: $font-gray-lightest;
+  }
+  &:focus {
+    //border: none;
+    border-color: transparent;
+    outline: none;
+  }
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  vertical-align: middle;
+  //width: 400px;
+  min-height: 36px;
+  //height: 36px;
+  .multiFilterHidden {
+    display: none;
+  }
+  .singleSelectInputEllipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  * {
+    box-sizing: border-box;
+    font-family: Sans-Serif;
+  }
+
+  // Container.
+  > div {
+    &.solidSingleheigth {
+      height: 36px;
+    }
+    &:disabled {
+      background-color: $gray-grade-8;
+    }
+    &.isHidden {
+      //visibility: hidden;
+      //border: none;
+      border-color: transparent;
+      border-style: solid;
+      outline: none;
+    }
+    position: relative;
+    border: 1px solid $gray-grade-4;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    outline: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+    width: 100%;
+
+    &.open {
+
+    }
+
+    &.focus {
+
+    }
+
+    &.below {
+
+    }
+
+    &.disabled {
+      background-color: $gray-grade-8;
+      color: #aaa;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    > div.single {
+      display: flex;
+      height: 36px;
+      width: inherit;
+      .hiddeSingle {
+        //display: none;
+        border-color: transparent;
+        border-style: solid;
+      }
+      > div.value,
+      > div.placeholder {
+        flex: 1;
+        //line-height: 30px;
+        overflow: hidden;
+        padding: 0 10px;
+        color: $font-gray-normal;
+        white-space: nowrap;
+      }
+
+      > div.placeholder {
+        color: #a9a9a9;
+      }
+
+      > div.clear,
+      > div.toggle {
+        //color: #aaa;
+        //line-height: 36px;
+        //text-align: center;
+        //width: 30px;
+        ////margin-right: 10px;
+        //z-index: 2;
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid $font-gray-lightest;
+        margin-top: 15px;
+        margin-right: 10px;
+        //&:hover, &:active {
+        //  border-top: 4px solid $blue-normal;
+        //}
+        //&:hover {
+        //  background-color: #ececec;
+        //  border-color: #00abff;
+        //}
+      }
+
+      > div.clear {
+        font-size: 18px;
+      }
+
+      > div.toggle {
+        font-size: 14px;
+      }
+    }
+    > div.multiple.borderShowBlue {
+      //border: 1px solid $blue-normal;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      outline: none;
+    }
+    > div.multiple {
+      display: flex;
+      flex-flow: row wrap;
+      //height: 36px;
+      min-height: 34px;
+      //padding: 0 10px;
+      //width: 370px;
+      width: 100%;
+      outline: none;
+
+      > div.toggle {
+        &.multipletoggleMarginOpen {
+          top: 12px;
+          right: 10px;
+        }
+        &.multipletoggleMarginClose {
+          top: 12px;
+          right: 10px;
+        }
+        position: absolute;
+        margin-left: 370px;
+
+        //color: #aaa;
+        //line-height: 36px;
+        //text-align: center;
+        //margin-left: 370px;
+        //width: 30px;
+        ////margin-right: 10px;
+        //z-index: 2;
+        //font-size: 14px;
+        //&:hover {
+        //  background-color: #ececec;
+        //  border-color: #00abff;
+        //}
+        //.caret-down {
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid $font-gray-lightest;
+        margin-top: 4px;
+        //&:hover, &:active {
+        //  border-top: 4px solid $blue-normal;
+        //}
+        //}
+      }
+      > div.option {
+        border-radius: 4px;
+        color: $font-gray-normal;
+        cursor: default;
+        display: inline-block;
+        flex-shrink: 0;
+        font-size: 14px;
+        line-height: 22px;
+        margin: 5px 0 5px 10px;
+        padding: 0 0 0 10px;
+        border: 1px solid $gray-grade-5;
+        background-color: $gray-grade-8;
+        span.deselect-option {
+          color: $gray-grade-3;
+          cursor: pointer;
+          font-size: 8px;
+          height: 8px;
+          line-height: 8px;
+          padding-left: 10px;
+          padding-right: 10px;
+          vertical-align: middle;
+
+          &:hover {
+            color: $font-gray-normal;
+          }
+        }
+      }
+
+      input {
+        background-color: transparent;
+        border-color: transparent;
+        //border: none;
+        height: 36px;
+        line-height: 36px;
+        padding-left: 10px;
+        &:focus {
+          outline: none;
+          color: $blue-normal;
+          text-shadow: 0 0 0 $font-gray-normal;
+          -webkit-text-fill-color: transparent;
+          //& + .border {
+          //  border: 1px solid $blue-normal;
+          //}
+        }
+
+        &::-webkit-input-placeholder {
+          //padding-left: 10px;
+          text-shadow: none;
+          min-width: 52px;
+          -webkit-text-fill-color: initial;
+        }
+        &::-moz-placeholder {
+          //padding-left: 10px;
+          min-width: 52px;
+          text-shadow: none;
+          -webkit-text-fill-color: $font-gray-normal;
+        }
+      }
+
+      .borderColor {
+        border: 1px solid $blue-normal;
+      }
+      .border {
+        /* 尺寸自适应容器大小，假装是容器 */
+        position: absolute;
+        border-radius: 2px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: -5px;
+        /* 在输入框的下面 */
+        z-index: -1;
+        /* 外观模拟 */
+
+        //border-color: $blue-normal
+
+      }
+
+    }
+  }
+
+  // Label.
+  label {
+    color: rgba(0, 0, 0, 0.38);
+    display: block;
+    font-size: 13px;
+    padding: 4px 0;
+  }
+}

@@ -1,0 +1,78 @@
+<header>
+    <h1>表单</h1>
+</header>
+<section>
+    <h2>表单样例</h2>
+
+    <form novalidate #form1="ngForm">
+        <div class="form-group">
+            <span class="form-group-left">镜像名称：</span>
+            <px-text-input class="form-group-right" [(ngModel)]="imageName" name="imageName" placeholder="placerholder"
+                           hintLabel="镜像名称提示" #name="ngModel" minlength="4" maxlength="10" required>
+            </px-text-input>
+            <div *ngIf="name.errors && name.dirty && name.touched"
+                 class="form-error">
+                <div [hidden]="!name.errors.required">
+                    Name is required
+                </div>
+                <div [hidden]="!name.errors.minlength">
+                    Name must be at least 4 characters long.
+                </div>
+                <div [hidden]="!name.errors.maxlength">
+                    Name cannot be more than 10 characters long.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-group-left">版本号：</label>
+            <px-text-input class="form-group-right" [(ngModel)]="imageVersion" name="imageVersion"
+                           placeholder="placerholder" hintLabel="镜像版本号不能为空,必须符合正则式" #version="ngModel"
+                           pattern="^([a-z]|[A-Z]|[0-9]){1}([a-z]|[0-9]|[A-Z]|[_]|[-]|[.]){0,63}$" required>
+            </px-text-input>
+            <div *ngIf="version.errors && version.dirty && version.touched"
+                 class="form-error">
+                <div [hidden]="!version.errors.required">
+                    version is required
+                </div>
+                <div [hidden]="!version.errors.pattern">
+                    version must be match pattern.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-group-left"></label>
+            <px-checkbox class="form-group-right">发布为公共镜像</px-checkbox>
+        </div>
+        <div class="form-group">
+            <label class="form-group-left"></label>
+            <div class="form-group-button">
+                <px-button [type]="'confirm'" *ngIf="!isLoading" [disabled]="form1.invalid">上传</px-button>
+                <px-button [type]="'confirm'" *ngIf="isLoading">上传中</px-button>
+                <px-button [type]="'cancel'" [disabled]="isLoading">取消</px-button>
+            </div>
+        </div>
+    </form>
+</section>
+<section>
+    <header>
+    <h2>表单对应的实际代码</h2>
+    <label>
+        下面的代码对应于上面的表单样式，其中 class="form-group".label标签内部也可以放置 a 和
+        checkbox标签。对于.form-group内部只有右侧的情况(比如最下面的按钮)，应该留一个空的label标签，并且后面几个px-button组件，可以放置在class="form-group-right"的div里面，也可以去这个div，px-button作为.form-group的直接子元素。
+    </label>
+    </header>
+    <px-code>
+        <html-code>{{formHtmlCode}}</html-code>
+    </px-code>
+</section>
+<section>
+    <header>
+    <h2>在实际ng2的componet.ts代码中自定义设置form左侧label宽度</h2>
+    <label>
+        默认form左侧label宽度为180px,与右侧input区域间距10px。如果在某个form表单中需要自定义左侧label宽度，需要在component声明的Styles属性中，设置其专属样式。例如要将label宽度设置为200px，只需要在component中，如下设置左侧和右侧区域宽度样式，覆盖外部默认样式即可。
+    </label>
+    </header>
+    <px-code>
+        <css-code>{{formLabelStyleCode}}</css-code>
+    </px-code>
+</section>

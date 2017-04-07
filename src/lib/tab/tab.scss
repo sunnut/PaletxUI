@@ -1,0 +1,62 @@
+@import '../styles/common';
+
+.nav-tabs {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid $gray-grade-4;
+    color: $font-gray-light;
+    height: 44px;
+    .nav-item {
+        height: 44px;
+        &::before {
+            display: block;
+            content: '';
+            border: none;
+            height: 2px;
+            background-color: transparent;
+            position: relative;
+            z-index: 1;
+        }
+        &::after {
+            display: block;
+            content: '';
+            border: none;
+            border-right: 1px solid $gray-grade-4;
+            border-left: 1px solid $gray-grade-4;
+            height: 1px;
+            background-color: $gray-grade-4;
+            position: relative;
+            z-index: 1;
+        }
+        &.active {
+            &::before {
+                background-color: $blue-normal;
+            }
+            &::after {
+                background-color: $white-normal;
+            }
+            a:hover {
+                border-left-color: $gray-grade-4;
+                border-right-color: $gray-grade-4;
+                background-color: $white-normal;
+            }
+        }
+        a {
+            color: $font-gray-light;
+            margin-right: 0;
+            border-radius: 0;
+            border-top: none;
+            min-width: 120px;
+            padding-left: 14px;
+            padding-right: 14px;
+            text-align: center;
+            &:hover {
+                border-color: transparent;
+                background-color: $gray-grade-9;
+            }
+            &.active {
+                color: $font-gray-normal;
+            }
+        }
+    }
+}

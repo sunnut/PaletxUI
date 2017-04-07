@@ -1,0 +1,4 @@
+<div class="alert" [ngClass]="alertClass" [class.alert-dismissible]="!show">
+    <ng-content></ng-content>
+    <a href="javascript:void(0);" (click)="close()" *ngIf="isNotSuccessType()"></a>
+</div>

@@ -1,0 +1,19 @@
+@import '../styles/common';
+
+$input-height: 36px;
+
+:host {
+  display: inline-block;
+}
+
+.text-input-connector {
+  display: inline-block;
+  width: 18px;
+  .connector {
+    content: '-';
+    width: 8px;
+    height: 2px;
+    background-color: $gray-grade-4;
+    margin: 5px auto;
+  }
+}

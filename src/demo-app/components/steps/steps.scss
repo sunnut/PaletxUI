@@ -1,0 +1,66 @@
+.yang {
+  margin-top: 50%;
+}
+.steps-textArea-horizon {
+  background-color: #f8f8f8;
+  width: auto;
+  height: 400px;
+  margin-top: 20px;
+  position: relative;
+}
+.content {
+  position: absolute;
+  top:50%;
+  left:50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+h2 + label {
+  font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'Segoe UI', 'Arial', 'san-serif';
+  font-weight: normal;
+  font-size: 14px;
+  color: #7c868d;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.verticalContent {
+  height: 400px;
+  width: auto;
+  margin-left: 180px;
+  margin-top:  100px;
+  background:#f8f8f8;
+  position:absolute;
+}
+
+.fatherDiv {
+  height: 700px;
+  width:auto;
+  position: relative;
+  margin-top: 40px;
+}
+
+.buttonGroup {
+  position: absolute;
+  bottom: 124px;
+  left: 180px;
+}
+
+.fatherDivCustom {
+  margin-top: 40px;
+  height: 500px;
+  width:auto;
+  position: relative;
+}
+.buttonGroupCustom {
+  position: absolute;
+  bottom: 25px;
+  left: 180px;
+}
+
+px-button + px-button {
+  padding-left: 5px;
+}

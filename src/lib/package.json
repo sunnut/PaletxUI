@@ -1,0 +1,31 @@
+{
+  "name": "paletxUI",
+  "version": "1.0.0",
+  "description": "paletxUI",
+  "main": "./paletxUI.umd.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "angular",
+    "PaletxUI",
+    "styles lib",
+    "components"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "peerDependencies": {
+    "@angular/core": "^2.2.0",
+    "@angular/common": "^2.2.0",
+    "@angular/http": "^2.2.0"
+  },
+  "dependencies": {
+    "@types/hammerjs": "^2.0.30"
+  }
+}

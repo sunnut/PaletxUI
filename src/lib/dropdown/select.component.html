@@ -1,0 +1,139 @@
+<!--<label-->
+<!--*ngIf="label !== ''">-->
+<!--{{label}}-->
+<!--</label>-->
+
+<div
+				[ngStyle]="{ 'width.px': eleWidth}"
+				#selection
+				[attr.tabindex]="disabled ? null : 0"
+				[ngClass]="{'open': isOpen, 'focus': hasFocus, 'below': isBelow, 'disabled': disabled,'isHidden': ((isOpen)),'solidSingleheigth': !multiple}"
+				(click)="onSelectContainerClick($event)"
+				(focus)="onSelectContainerFocus()"
+				(blur)="blur()"
+				(keydown)="onSelectContainerKeydown($event)"
+				(window:click)="onWindowClick()"
+				(window:resize)="onWindowResize()"
+>
+
+	<div class="single"
+	     *ngIf="!multiple" [ngClass]="{'hiddeSingle': isOpen}">
+		<div *ngIf="optionList.hasSelected()" class="value singleSelectInputEllipsis"
+		     title="{{optionList.selection[0].label}}" (click)="hiddeSingle=!hiddeSingle">
+			{{optionList.selection[0].label}}
+		</div>
+		<!--<ng-container *ngIf="optionList.hasSelected()">-->
+		<!--<ng-container [ngSwitch]="optionList.selection[0].label.length*10>width-40">-->
+		<!--<ng-container  *ngSwitchCase="true">-->
+		<!--<div class="value singleSelectInputEllipsis"-->
+		<!--*ngIf="optionList.hasSelected()" title="{{optionList.selection[0].label}}" >-->
+		<!--{{myTransitionString(optionList.selection[0].label)}}-->
+		<!--</div>-->
+		<!--</ng-container>-->
+		<!--<ng-container  *ngSwitchCase="false">-->
+		<!--<div class="value"-->
+		<!--*ngIf="optionList.hasSelected()">-->
+		<!--{{optionList.selection[0].label}}-->
+		<!--</div>-->
+		<!--</ng-container>-->
+		<!--</ng-container>-->
+		<!--</ng-container>-->
+		<div class="placeholder"
+		     *ngIf="!optionList.hasSelected()">
+			{{placeholderView}}
+		</div>
+		<div class="clear"
+		     *ngIf="allowClear && hasSelected"
+		     (click)="onClearSelectionClick($event)">
+			&#x2715;
+		</div>
+		<!--<div class="toggle"-->
+		<!--*ngIf="isOpen">-->
+		<!--&#x25B2;-->
+		<!--</div>-->
+		<!--<div class="toggle"-->
+		<!--*ngIf="!isOpen">-->
+		<!--&#x25BC;-->
+		<!--</div>-->
+		<div class="toggle">
+			<!--&#x25BC;-->
+		</div>
+	</div>
+
+	<div class="multiple"
+	     *ngIf="multiple" [ngClass]="{'borderShowBlue': isOpen}">
+		<div class="option"
+		     *ngFor="let option of optionList.selection">
+			<ng-container [ngSwitch]="option.label.length*10>width-40">
+				<ng-container *ngSwitchCase="true">
+					<span title="{{option.label}}">{{myTransitionString(option.label)}}</span>
+
+					<span class="deselect-option"
+					      (click)=onDeselectOptionClick(option)>
+                &#x2715;
+            </span>
+				</ng-container>
+				<ng-container *ngSwitchCase="false">
+					{{option.label}}
+					<span class="deselect-option"
+					      (click)=onDeselectOptionClick(option)>
+                &#x2715;
+            </span>
+				</ng-container>
+			</ng-container>
+		</div>
+		<input
+						*ngIf="filterEnabled"
+						#filterInput
+						autocomplete="off"
+						tabindex="-1"
+						[placeholder]="placeholderView"
+						[ngStyle]="{'width.px': filterInputWidth}"
+						(input)="onMultipleFilterInput($event)"
+						(keydown)="onMultipleFilterKeydown($event)"/>
+		<label class="border" [ngClass]="{'borderColor': isOpen}"></label>
+		<div class="toggle"
+		     [ngClass]="{'multipletoggleMarginOpen': isOpen,'multipletoggleMarginClose':!isOpen}"
+		>
+			<!--&#x25BC;-->
+		</div>
+	</div>
+</div>
+<select-dropdown
+				*ngIf="isOpen && multiple"
+				#dropdown
+				[multiple]="multiple"
+				[optionList]="optionList"
+				[notFoundMsg]="notFoundMsg"
+				[highlightColor]="highlightColor"
+				[highlightTextColor]="highlightTextColor"
+				[filterEnabled]="filterEnabled"
+				[placeholder]="filterPlaceholder"
+				[width]="width"
+				[top]="top"
+				[left]="left"
+				(close)="onDropdownClose($event)"
+				(optionClicked)="onDropdownOptionClicked($event)"
+				(singleFilterClick)="onSingleFilterClick()"
+				(singleFilterInput)="onSingleFilterInput($event)"
+				(singleFilterKeydown)="onSingleFilterKeydown($event)">
+</select-dropdown>
+<select-dropdown
+				*ngIf="isOpen && !multiple"
+				#dropdown
+				[multiple]="multiple"
+				[optionList]="optionList"
+				[notFoundMsg]="notFoundMsg"
+				[highlightColor]="highlightColor"
+				[highlightTextColor]="highlightTextColor"
+				[filterEnabled]="filterEnabled"
+				[placeholder]="filterPlaceholder"
+				[width]="width"
+				[top]="0"
+				[left]="left"
+				(close)="onDropdownClose($event)"
+				(optionClicked)="onDropdownOptionClicked($event)"
+				(singleFilterClick)="onSingleFilterClick()"
+				(singleFilterInput)="onSingleFilterInput($event)"
+				(singleFilterKeydown)="onSingleFilterKeydown($event)">
+</select-dropdown>

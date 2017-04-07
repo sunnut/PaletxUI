@@ -1,0 +1,116 @@
+<header>
+  <h1>Radio 单选框</h1>
+  <label>单选用于在一组相关但互斥的选项中进行选择，用户能且仅能选择一个选项。Radio Button作为其中的一种表现形式，在界面上经常被使用.</label>
+</header>
+<section>
+  <h2>常规单选按钮</h2>
+  <label>多用于表单填写中表示是否关系</label>
+  <section>
+    <div>
+        <px-radioButton name="testradio" *ngFor="let o of options" [value]="o.value" [(ngModel)]="chosenOption1" label="{{o.label}}"></px-radioButton>
+    </div>
+  </section>
+</section>
+<section>
+  <h2>禁用状态</h2>
+  <section>
+    <div>
+      <px-radioButton name="testradio2" [value]="true" [(ngModel)]="chosenOption1" label="是" disabled></px-radioButton>
+      <px-radioButton name="testradio2" [value]="false" [(ngModel)]="chosenOption1" label="否" disabled></px-radioButton>
+    </div>
+  </section>
+</section>
+<px-code>
+  <html-code>{{radioHtml21}}</html-code>
+</px-code>
+<section>
+  <h2>配置项参数</h2>
+  <table class="demo">
+    <thead>
+    <tr>
+      <th width="20%">属性</th>
+      <th width="10%">类型</th>
+      <th width="10%">缺省值</th>
+      <th width="60%">描述</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td></td>
+      <td>radio group名称</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>string</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>value</td>
+      <td>string</td>
+      <td>null</td>
+      <td>绑定值</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>string</td>
+      <td>null</td>
+      <td>禁用状态</td>
+    </tr>
+
+  </table>
+</section>
+<!--section>
+  <h2>常规单选按钮</h2>
+  <label>多用于表单填写中表示是否关系</label>
+  <section>
+    <div>
+      <px-radio-group [(ngModel)]="chosenOption1" [ngModelOptions]="{standalone:true}">
+        <px-radio-button *ngFor="let o of options" [value]="o.value">{{o.label}}</px-radio-button>
+      </px-radio-group>
+    </div>
+  </section>
+</section>
+<section>
+  <h2>禁用状态</h2>
+  <section>
+    <div>
+      <px-radio-group [(ngModel)]="chosenOption2" [ngModelOptions]="{standalone:true}">
+        <px-radio-button [value]='"true"'>是</px-radio-button>
+        <px-radio-button style="margin-left: 32px;" [value]='"false"' [disabled]='true'>否</px-radio-button>
+      </px-radio-group>
+    </div>
+  </section>
+</section>
+<px-code>
+  <html-code>{{radioHtml1}}</html-code>
+</px-code>
+<section>
+  <h2>配置项参数</h2>
+  <table class="demo">
+    <thead>
+    <tr>
+      <th width="20%">属性</th>
+      <th width="10%">类型</th>
+      <th width="10%">缺省值</th>
+      <th width="60%">描述</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>disabled</td>
+      <td>string</td>
+      <td>null</td>
+      <td>禁用状态</td>
+    </tr>
+    <tr>
+      <td>value</td>
+      <td>string</td>
+      <td>null</td>
+      <td>绑定值</td>
+    </tr>
+  </table>
+</section-->

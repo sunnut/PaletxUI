@@ -1,0 +1,123 @@
+@import '../../demo-common';
+
+.symbol {
+  display: inline-block;
+  @include font($font-size-normal, $font-gray-light);
+  width: 100px;
+  text-align: center;
+}
+
+section {
+  .color-left {
+    display: inline-block;
+    margin-right: 140px;
+  }
+  .color-right {
+    display: inline-block;
+  }
+  .color-title {
+    @include font($font-size-normal, $font-gray-normal);
+    margin-bottom: 8px;
+  }
+  .color-show {
+    span {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      border-radius: 4px;
+    }
+    .blue-normal {
+      background-color: $blue-normal;
+    }
+    .blue-hover {
+      background-color: $blue-dark;
+    }
+    .blue-click {
+      background-color: $blue-darkest;
+    }
+    .red-normal {
+      background-color: $red-normal;
+    }
+    .red-hover {
+      background-color: $red-dark;
+    }
+    .red-click {
+      background-color: $red-darkest;
+    }
+    .nav-normal {
+      background-color: $nav-blue-normal;
+    }
+    .nav-hover {
+      background-color: $nav-blue-dark;
+    }
+    .nav-click {
+      background-color: $nav-blue-darkest;
+    }
+    .yellow-normal {
+      background-color: $yellow-normal;
+    }
+    .yellow-hover {
+      background-color: $yellow-dark;
+    }
+    .yellow-click {
+      background-color: $yellow-darkest;
+    }
+    .green-normal {
+      background-color: $green-normal;
+    }
+    .green-hover {
+      background-color: $green-dark;
+    }
+    .green-click {
+      background-color: $green-darkest;
+    }
+    .font-1 {
+      background-color: $font-gray-lightest;
+    }
+    .font-2 {
+      background-color: $font-gray-light;
+    }
+    .font-3 {
+      background-color: $font-gray-normal;
+    }
+    .font-4 {
+      background-color: #313b40;
+    }
+  }
+  .gray-color-show {
+    span {
+      display: inline-block;
+      width: 65px;
+      height: 65px;
+      margin-right: 15px;
+      border-radius: 4px;
+    }
+    .gray-1 {
+      background-color: $gray-grade-1;
+    }
+    .gray-2 {
+      background-color: $gray-grade-2;
+    }
+    .gray-3 {
+      background-color: $gray-grade-3;
+    }
+    .gray-4 {
+      background-color: $gray-grade-4;
+    }
+    .gray-5 {
+      background-color: $gray-grade-5;
+    }
+    .gray-6 {
+      background-color: $gray-grade-6;
+    }
+    .gray-7 {
+      background-color: $gray-grade-7;
+    }
+    .gray-8 {
+      background-color: $gray-grade-8;
+    }
+    .gray-9 {
+      background-color: $gray-grade-9;
+    }
+  }
+}

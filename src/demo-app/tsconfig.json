@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es6", "es2015", "dom"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "outDir": "../../dist/",
+    "inlineSources": true,
+    "sourceMap": true,
+    "target": "es5",
+    "stripInternal": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "baseUrl": "",
+    "typeRoots": [
+      "../../node_modules/@types/!(node)"
+    ],
+    "paths": {
+      "paletxUI/*": [
+        "../../dist/paletxUI/*"
+      ]
+    }
+  },
+  "files": [
+    "./demo-app/demo-app.types.d.ts",
+    "./demo-app/demo-app.module.ts",
+    "./system-config.ts",
+    "./main.ts"
+  ],
+  "angularCompilerOptions": {
+    "genDir": "../../dist",
+    "skipTemplateCodegen": true,
+    "debug": true
+  }
+}

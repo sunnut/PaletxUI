@@ -1,0 +1,48 @@
+@import 'common';
+
+$input-width: 400px;
+$input-short-width: 120px;
+$input-height: 36px;
+$padding: 10px;
+$border-width: 1px;
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='tel'] {
+  @include font();
+  height: $input-height;
+  line-height: 34px;
+  width: $input-width;
+  padding: 0 $padding;
+  border: 1px solid $gray-grade-4;
+  border-radius: 2px;
+  outline: none;
+  box-shadow: none;
+
+  &:focus {
+    border-color: $blue-normal;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  input[type='text'],
+  input[type='password'],
+  input[type='email'],
+  input[type='tel'] {
+    &:focus {
+      border-color: $blue-normal;
+      color: $blue-normal;
+      text-shadow: 0 0 0 $font-gray-normal;
+      -webkit-text-fill-color: transparent;
+    }
+    &::-webkit-input-placeholder {
+      text-shadow: none;
+      -webkit-text-fill-color: initial;
+    }
+  }
+}
+
+input[disabled] {
+  background: $gray-grade-7;
+}

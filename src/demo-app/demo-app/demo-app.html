@@ -1,0 +1,26 @@
+<header class="navbar navbar-fixed-top">
+    <div class="navbar-brand">
+        <a href="javascript:;" routerLink="/home">
+            <span>Paletx</span><span>UI</span>
+        </a>
+    </div>
+    <li [ngClass]="{'active': isStyleRouterActive}">
+        <a routerLink="style/color">风格</a>
+    </li>
+    <li [ngClass]="{'active': isComponentsRouterActive}">
+        <a routerLink="components/summary">组件</a>
+    </li>
+    <li [ngClass]="{'active': isPatternRouterActive}">
+        <a routerLink="pattern/form">模式</a>
+    </li>
+    <li routerLinkActive="active">
+        <a routerLink="/download">版本</a>
+    </li>
+</header>
+<demo-components-nav *ngIf="isComponentsRouterActive"></demo-components-nav>
+<demo-style-nav *ngIf="isStyleRouterActive"></demo-style-nav>
+<demo-pattern-nav *ngIf="isPatternRouterActive"></demo-pattern-nav>
+<div [ngClass]="{'main-content': isComponentsRouterActive||isStyleRouterActive||isPatternRouterActive }">
+  <router-outlet></router-outlet>
+</div>
+<px-confirmDialog></px-confirmDialog>

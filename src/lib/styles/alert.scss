@@ -1,0 +1,53 @@
+@import 'common';
+
+:host(.px-alert-on-top) {
+  position: fixed;
+  top: 50px;
+  left: 500px;
+}
+
+.alert {
+  @include font();
+  width: 600px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  color: $white-normal;
+  border: 0;
+  border-radius: 4px;
+  padding-top: 0;
+
+  a {
+    display: inline-block;
+    /* stylelint-disable */
+    float: right;
+    width: 20px;
+    height: 20px;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-image: url('/assets/images/alert/icon_alert_close.png');
+    /* stylelint-enable */
+    &:hover {
+      background-image: url('/assets/images/alert/icon_alert_close_hover.png');
+    }
+  }
+}
+
+.alert-success {
+  background-color: $green-normal;
+}
+
+.alert-warning {
+  background-color: $yellow-normal;
+}
+
+.alert-error {
+  background-color: $red-normal;
+}
+
+.alert-dismissible {
+  display: none;
+}

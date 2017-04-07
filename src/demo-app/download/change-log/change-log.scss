@@ -1,0 +1,62 @@
+@import '../../demo-common';
+
+section {
+  margin: 0;
+}
+
+article {
+  height: 690px;
+  width: 980px;
+  margin: 0 auto 80px;
+  text-align: center;
+  position: relative;
+  .title {
+    @include font(40px, $font-gray-normal);
+    margin: 70px 0 20px;
+  }
+  .sub-title {
+    @include font(16px, $font-gray-normal);
+    margin: 20px 0 30px;
+    span {
+      margin-right: 20px;
+    }
+  }
+  .content {
+    margin-bottom: 60px;
+  }
+  .content-title {
+    @include font(30px, $font-gray-normal);
+    margin-bottom: 10px;
+    text-align: left;
+    vertical-align: middle;
+    &::before {
+      display: inline-block;
+      content: '';
+      top: 0;
+      margin-right: 10px;
+      width: 54px;
+      height: 54px;
+      vertical-align: middle;
+    }
+  }
+  .new-content-title::before {
+    background: url('../../images/icon_addition.png') no-repeat;
+  }
+  .bug-fix-content-title::before {
+    background: url('../../images/icon_repairs.png') no-repeat;
+  }
+  hr {
+    color: $gray-grade-4;
+  }
+  .update-content {
+    text-align: left;
+    margin: 40px 0 10px;
+    padding-left: 64px;
+  }
+  .update-item-title {
+    @include font($font-size-lg, $font-gray-normal);
+  }
+  .update-item-content {
+    @include font($font-size-normal, $font-gray-light);
+  }
+}

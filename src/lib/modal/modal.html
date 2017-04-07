@@ -1,0 +1,39 @@
+<div class="px-modal-backdrop" [hidden]="!open">
+    <div class="px-modal-dialog" [ngStyle]="setStyles">
+        <div class="px-modal-content">
+            <div *ngIf="showDefaultHeader" class="px-modal-header">
+                <!--<div class="close" (click)="closeModal()">-->
+                <!--<span>&times;</span>-->
+                <div class="px-modal-header-close" (click)="closeModal()"></div>
+                <!--  </div>-->
+                <span class="px-modal-title">{{title}}</span>
+
+            </div>
+            <div *ngIf="type === 'exclamation'">
+                <div class="px-modal-body">
+                    <div class="img-exclamation"></div>
+                    <h5>{{message}}</h5>
+                    <small>{{messageDown}}</small>
+                </div>
+                <div class="px-modal-footer-alert">
+                    <!--<button class="px-delete-button btn-default px-modal-button-right" (click)="submitModal()">删除</button>-->
+                    <!-- <button class="px-cancel-button btn-default"  (click)="closeModal()">取消</button>-->
+                    <px-button class="px-modal-button-right" [type]="'danger'"
+                               (click)="submitModal()">{{warnConfirm}}</px-button>
+                    <px-button [type]="'cancel'" (click)="closeModal()">{{warnCancel}}</px-button>
+                </div>
+            </div>
+
+            <ng-content></ng-content>
+            <div *ngIf="type !== 'exclamation'">
+                <div *ngIf="showDefaultFooter" class="px-modal-footer">
+                    <!--<button class="px-confirm-button btn-default px-modal-button-right" (click)="submitModal()">确认</button>-->
+                    <!--<button class="px-cancel-button btn-default"  (click)="closeModal()">取消</button>-->
+                    <px-button class="px-modal-button-right" [type]="'confirm'" 
+                               (click)="submitModal()">确认</px-button>
+                    <px-button [type]="'cancel'" (click)="closeModal()">取消</px-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

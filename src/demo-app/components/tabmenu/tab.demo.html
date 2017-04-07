@@ -1,0 +1,132 @@
+<article class="main-content">
+    <header>
+        <h1>Tabs 选项卡</h1>
+        <p><br>用于菜单选项卡之间的切换，切换整个内容，或作为独立的选项单独存在。</p>
+    </header>
+    <section>
+        <h1>一级基础tab(tabmenu)</h1>
+        <p>tabmenu是一个导航/命令组件，显示项目作为标签头。</p>
+        <px-tabMenu [model]="tabMenuItems"></px-tabMenu>
+        <router-outlet></router-outlet>
+
+        <div style="margin-top: 30px;">
+            <px-code>
+                <html-code>{{tooltipHTMLCode1}}</html-code>
+                <ts-code>{{tooltipTSCode1}}</ts-code>
+            </px-code>
+        </div>
+    </section>
+
+    <section>
+        <h2>配置项参数</h2>
+        <table class="demo">
+            <thead>
+            <tr>
+                <th width="20%">属性</th>
+                <th width="10%">类型</th>
+                <th width="10%">缺省值</th>
+                <th width="60%">描述</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>model</td>
+                <td>PxMenuItem[]</td>
+                <td>空数组</td>
+                <td>PxMenuItem.label<br>
+                    PxMenuItem.routerLink<br>
+                    PxMenuItem.routerLinkQueryParams?
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <h1>一级基础tab(tabview)</h1>
+        <p>tabview是一个容器组件标签组的内容。</p>
+        <p-tabView>
+            <p-tabPanel header="Header 1">
+                Content 1
+            </p-tabPanel>
+            <p-tabPanel header="Header 2">
+                Content 2
+            </p-tabPanel>
+            <p-tabPanel header="Header 3">
+                Content 3
+            </p-tabPanel>
+        </p-tabView>
+
+        <div style="margin-top: 30px;">
+            <px-code>
+                <html-code>{{tooltipHTMLCode2}}</html-code>
+                <ts-code>{{tooltipTSCode2}}</ts-code>
+            </px-code>
+        </div>
+    </section>
+
+    <section>
+        <h2>配置项参数</h2>
+        <table class="demo">
+            <thead>
+            <tr>
+                <th width="20%">属性</th>
+                <th width="10%">类型</th>
+                <th width="10%">缺省值</th>
+                <th width="60%">描述</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>header</td>
+                <td>string</td>
+                <td>null</td>
+                <td>选项卡头部位置</td>
+            </tr>
+            <tr>
+                <td>selected</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>定义标签是否有效</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <header>
+            <h1>作为独立选项存在Segment</h1>
+            <p><br>表单中的，选择按钮，基础宽度为80PX，文字超宽左右padding14px。</p>
+        </header>
+        <p>内存： <p-selectButton [options]="types" [(ngModel)]="selectedType"></p-selectButton></p>
+        <p>{{selectedType}}</p>
+
+        <div style="margin-top: 30px;">
+            <px-code>
+                <html-code>{{tooltipHTMLCode3}}</html-code>
+                <ts-code>{{tooltipTSCode3}}</ts-code>
+            </px-code>
+        </div>
+    </section>
+    <section>
+        <h2>配置项参数</h2>
+        <table class="demo">
+            <thead>
+            <tr>
+                <th width="20%">属性</th>
+                <th width="10%">类型</th>
+                <th width="10%">缺省值</th>
+                <th width="60%">描述</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>options</td>
+                <td>SelectItem[]</td>
+                <td>空数组</td>
+                <td>An array of selectitems to display as the available options.</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</article>
+

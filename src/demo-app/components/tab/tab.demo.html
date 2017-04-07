@@ -1,0 +1,85 @@
+<article class="main-content">
+    <header>
+        <h1>选项卡(Tab)</h1>
+    </header>
+    <div (click)="$event.preventDefault()">
+        <section>
+            <h1>效果</h1>
+            <p>Select a tab by setting active binding to true:</p>
+            <p>
+                <button type="button" class="btn btn-primary btn-sm" (click)="tabs[0].active = true">Select second tab</button>
+                <button type="button" class="btn btn-primary btn-sm" (click)="tabs[1].active = true">Select third tab</button>
+            </p>
+            <p>
+                <button type="button" class="btn btn-primary btn-sm" (click)="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
+            </p>
+            <hr/>
+            <px-tabset>
+                <px-tab heading="Static title">Static content</px-tab>
+                <px-tab *ngFor="let tabz of tabs" [heading]="tabz.title" [active]="tabz.active" (select)="tabz.active = true" (deselect)="tabz.active = false" [disabled]="tabz.disabled" [removable]="tabz.removable" (removed)="removeTabHandler(tabz)" [customClass]="tabz.customClass">
+                    {{tabz?.content}}
+                </px-tab>
+                <px-tab (select)="alertMe()">
+                    <template pxTabHeading>
+                        <i class="glyphicon glyphicon-bell"></i> Alert!
+                    </template>
+                    I've got an HTML heading, and a select callback. Pretty cool!
+                </px-tab>
+            </px-tabset>
+            <!-- <hr/>
+        <px-tabset [vertical]="true" type="pills">
+            <px-tab heading="Vertical 1">Vertical content 1</px-tab>
+            <px-tab heading="Vertical 2">Vertical content 2</px-tab>
+        </px-tabset>
+        <hr />
+        <p><i>Bootstrap 4 doesn't have justified classes</i></p>
+        <px-tabset [justified]="true">
+            <px-tab heading="Justified">Justified content</px-tab>
+            <px-tab heading="SJ">Short Labeled Justified content</px-tab>
+            <px-tab heading="Long Justified">Long Labeled Justified content</px-tab>
+        </px-tabset> -->
+        </section>
+        <section>
+            <h1>示例代码</h1>
+            <h2>HTML</h2>
+            <pre class="prettyprint linenums lang-html prettyprinted">
+    
+    <ol class="linenums">
+    <li class="L0"><span class="tag">&lt;div</span><span class="pln"> (</span><span class="atn">click</span><span class="pln">)</span><span class="pun">=</span><span class="atv">"$event.preventDefault()"</span><span class="tag">&gt;</span></li>
+    <li class="L1"><span class="pln">  </span><span class="tag">&lt;p&gt;</span><span class="pln">Select a tab by setting active binding to true:</span><span class="tag">&lt;/p&gt;</span></li>
+    <li class="L2"><span class="pln">  </span><span class="tag">&lt;p&gt;</span></li>
+    <li class="L3"><span class="pln">    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-primary btn-sm"</span><span class="pln"> (</span><span class="atn">click</span><span class="pln">)</span><span class="pun">=</span><span class="atv">"tabs[0].active = true"</span><span class="tag">&gt;</span><span class="pln">Select second tab</span><span class="tag">&lt;/button&gt;</span></li>
+    <li class="L4"><span class="pln">    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-primary btn-sm"</span><span class="pln"> (</span><span class="atn">click</span><span class="pln">)</span><span class="pun">=</span><span class="atv">"tabs[1].active = true"</span><span class="tag">&gt;</span><span class="pln">Select third tab</span><span class="tag">&lt;/button&gt;</span></li>
+    <li class="L5"><span class="pln">  </span><span class="tag">&lt;/p&gt;</span></li>
+    <li class="L6"><span class="pln">  </span><span class="tag">&lt;p&gt;</span></li>
+    <li class="L7"><span class="pln">    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"btn btn-primary btn-sm"</span><span class="pln"> (</span><span class="atn">click</span><span class="pln">)</span><span class="pun">=</span><span class="atv">"tabs[1].disabled = ! tabs[1].disabled"</span><span class="tag">&gt;</span><span class="pln">Enable / Disable third tab</span><span class="tag">&lt;/button&gt;</span></li>
+    <li class="L8"><span class="pln">  </span><span class="tag">&lt;/p&gt;</span></li>
+    <li class="L9"><span class="pln">  </span><span class="tag">&lt;hr</span><span class="pln"> </span><span class="tag">/&gt;</span></li>
+    <li class="L0"><span class="pln">  </span><span class="tag">&lt;px-tabset&gt;</span></li>
+    <li class="L1"><span class="pln">    </span><span class="tag">&lt;px-tab</span><span class="pln"> </span><span class="atn">heading</span><span class="pun">=</span><span class="atv">"Static title"</span><span class="tag">&gt;</span><span class="pln">Static content</span><span class="tag">&lt;/px-tab&gt;</span></li>
+    <li class="L2"><span class="pln">    </span><span class="tag">&lt;px-tab</span><span class="pln"> *</span><span class="atn">ngFor</span><span class="pun">=</span><span class="atv">"let tabz of tabs"</span></li>
+    <li class="L3"><span class="pln">         [</span><span class="atn">heading</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"tabz.title"</span></li>
+    <li class="L4"><span class="pln">         [</span><span class="atn">active</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"tabz.active"</span></li>
+    <li class="L5"><span class="pln">         (</span><span class="atn">select</span><span class="pln">)</span><span class="pun">=</span><span class="atv">"tabz.active = true"</span></li>
+    <li class="L6"><span class="pln">         (</span><span class="atn">deselect</span><span class="pln">)</span><span class="pun">=</span><span class="atv">"tabz.active = false"</span></li>
+    <li class="L7"><span class="pln">         [</span><span class="atn">disabled</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"tabz.disabled"</span></li>
+    <li class="L8"><span class="pln">         [</span><span class="atn">removable</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"tabz.removable"</span></li>
+    <li class="L9"><span class="pln">         (</span><span class="atn">removed</span><span class="pln">)</span><span class="pun">=</span><span class="atv">"removeTabHandler(tabz)"</span></li>
+    <li class="L0"><span class="pln">         [</span><span class="atn">customClass</span><span class="pln">]</span><span class="pun">=</span><span class="atv">"tabz.customClass"</span><span class="tag">&gt;</span></li>
+    <li class="L1"><span class="pln">      {{tabz?.content}}</span></li>
+    <li class="L2"><span class="pln">    </span><span class="tag">&lt;/px-tab&gt;</span></li>
+    <li class="L3"><span class="pln">    </span><span class="tag">&lt;px-tab</span><span class="pln"> (</span><span class="atn">select</span><span class="pln">)</span><span class="pun">=</span><span class="atv">"alertMe()"</span><span class="tag">&gt;</span></li>
+    <li class="L4"><span class="pln">      </span><span class="tag">&lt;template</span><span class="pln"> </span><span class="atn">tabHeading</span><span class="tag">&gt;</span></li>
+    <li class="L5"><span class="pln">        </span><span class="tag">&lt;i</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"glyphicon glyphicon-bell"</span><span class="tag">&gt;&lt;/i&gt;</span><span class="pln"> Alert!</span></li>
+    <li class="L6"><span class="pln">      </span><span class="tag">&lt;/template&gt;</span></li>
+    <li class="L7"><span class="pln">      I've got an HTML heading, and a select callback. Pretty cool!</span></li>
+    <li class="L8"><span class="pln">    </span><span class="tag">&lt;/px-tab&gt;</span></li>
+    <li class="L9"><span class="pln">  </span><span class="tag">&lt;/px-tabset&gt;</span></li>
+</ol>
+            </pre>
+            
+            <h2>component.ts</h2>
+
+        </section>
+    </div>
+</article>

@@ -1,0 +1,157 @@
+@import '../styles/common';
+
+$cell-padding: 14px;
+$light-table-cell-padding: 18px;
+$checkbox-size: 16px;
+
+.ng2-smart-table {
+  font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'Segoe UI', 'Arial', 'san-serif' !important;
+  font-weight: normal !important;
+  font-size: $font-size-sm !important;
+  color: $font-gray-normal !important;
+  word-break: break-all;
+  th {
+    vertical-align: middle;
+    background-color: $gray-grade-8;
+    &:first-child {
+      border-left: 0;
+    }
+    &:last-child {
+      border-right: 0;
+    }
+  }
+  tr, tr:nth-of-type(odd) {
+    background-color: $white-normal;
+    border-left: 0;
+    border-right: 0;
+  }
+  td {
+    padding-left: $cell-padding;
+    padding-right: $cell-padding;
+    &:first-child {
+      border-left: 0;
+    }
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  td.number {
+    padding-left: $cell-padding;
+    padding-right: $cell-padding;
+  }
+
+  .ng2-smart-th {
+    font-size: 14px;
+    padding-left: $cell-padding;
+    padding-right: $cell-padding;
+  }
+
+  .ckbox label {
+    position: relative;
+  }
+
+  .ckbox input[type='checkbox'] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: $checkbox-size;
+    height: $checkbox-size;
+    &:hover + .checkbox-indicator {
+      border-color: $blue-normal;
+    }
+  }
+
+  .checkbox-indicator {
+    display: inline-block;
+    cursor: pointer;
+    height: $checkbox-size;
+    width: $checkbox-size;
+    border: 1px solid $gray-grade-4;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin: 4px 0 0;
+  }
+
+  .ckbox label.active .checkbox-indicator {
+    border-color: $blue-normal;
+    background-color: $blue-normal;
+  }
+
+  .ckbox label.active .checkbox-indicator::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 10px;
+    border: solid $white-normal;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    left: 5px;
+    top: 6px;
+  }
+}
+
+.ng2-smart-table.light {
+  td, td.number {
+    padding-left: $light-table-cell-padding;
+    padding-right: $light-table-cell-padding;
+  }
+  .ng2-smart-th {
+    background-color: $white-normal;
+    font-size: 14px;
+    padding-left: $light-table-cell-padding;
+    padding-right: $light-table-cell-padding;
+  }
+}
+
+.ng2-smart-page-item {
+  line-height: 1 !important;
+  .ng2-smart-page-link, input {
+    vertical-align: middle !important;
+    height: 28px !important;
+  }
+  input#search-box {
+    line-height: 1 !important;
+  }
+}
+
+.filter span.filterToggle {
+  height: 28px !important;
+}
+
+.innerTr {
+  border-left: 0 !important;
+  border-right: 0 !important;
+  min-height: 150px;
+  background-color: $gray-grade-7;
+  .innerTable {
+    min-height: 150px;
+  }
+  td {
+    background-color: $gray-grade-7;
+  }
+  & > td {
+    box-shadow: inset 0 4px 4px -4px, inset 0 -4px 4px -4px;
+  }
+}
+
+
+
+.ng2-smart-filter {
+  color: $gray-grade-2 !important;
+}
+
+.ng2-smart-title.sort {
+  color: #000000;
+  opacity: 0.87;
+}
+
+sif-smart-table-pager::after {
+  display: block;
+  content: '.';
+  height: 0;
+  width: 0;
+  clear: both;
+  visibility: hidden;
+}

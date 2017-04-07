@@ -1,0 +1,48 @@
+@import 'common';
+
+$form-group-height: 36px;
+$form-group-margin: 20px 0 0 0;
+$form-label-margin: 0 10px 0 0;
+$form-label-width:  180px;
+
+.form-group {
+  margin: $form-group-margin;
+  line-height:$form-group-height;
+  clear: both;
+
+  .form-group-left, .form-group-left label {
+    float: left;
+    width: 180px;
+    display: inline-block;
+    //vertical-align: top;
+    text-align: right;
+    color: $font-gray-light;
+    margin: $form-label-margin;
+    line-height: $form-group-height;
+    height: $form-group-height;
+    font-size: $font-size-normal;
+    font-weight: normal;
+  }
+
+  .form-group-right {
+    display: inline-block;
+    width: calc(100% - 190px);
+    text-align: left;
+  }
+
+  .form-error {
+    margin: 6px 0 -8px 190px;
+    line-height: $font-size-sm;
+    font-size: $font-size-sm;
+    color: $red-normal;
+    font-weight: normal;
+  }
+
+  .form-group-button {
+    margin-top: 40px;
+  }
+
+  .form-group-button button {
+    margin-right: 10px;
+  }
+}

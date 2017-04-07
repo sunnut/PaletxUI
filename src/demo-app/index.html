@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PaletxUI</title>
+  <base href="/">
+
+  <link rel="stylesheet" href="vendor/primeng/resources/primeng.css">
+  <link rel="stylesheet" href="vendor/prismjs/themes/prism.css">
+  <link rel="stylesheet" href="paletxUI/styles/primeng/theme.css">
+  <link rel="stylesheet" href="paletxUI/styles/paletxUI.css">
+  <link rel="stylesheet" href="paletxUI/styles/fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="paletxUI/styles/fonts/iconfont.css">
+  <link rel="stylesheet" href="demo-common.css">
+
+</head>
+<body>
+  <demo-app>Loading...</demo-app>
+
+  <script src="vendor/core-js/client/core.js"></script>
+  <script src="vendor/systemjs/dist/system.src.js"></script>
+  <script src="vendor/zone.js/dist/zone.js"></script>
+  <script src="vendor/hammerjs/hammer.min.js"></script>
+  <script src="vendor/prismjs/prism.js"></script>
+
+  <script>
+    System.import('system-config.js').then(function () {
+      System.import('main');
+    }).catch(console.error.bind(console));
+  </script>
+</body>
+</html>

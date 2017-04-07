@@ -1,0 +1,53 @@
+<div
+				[ngStyle]="{'top.px': top, 'left.px': left, 'width.px': width}"
+        >
+
+	<div class="filter"
+	     *ngIf="!multiple && filterEnabled">
+		<input class="filterinput"
+						#filterInput
+						autocomplete="off"
+						[placeholder]="placeholder"
+						value="{{singleFilterValue}}"
+						(click)="onSingleFilterClick($event)"
+						(input)="onSingleFilterInput($event)"
+						(keydown)="onSingleFilterKeydown($event)">
+		<div class="toggle">
+			<!--&#x25BC;-->
+		</div>
+	</div>
+
+	<div class="options"
+	     #optionsList [ngClass]="{'optionScroll': isNeedScroll}" [ngStyle]="{'max-height.px': isNeedScroll?scrollLength * 36:'none'}">
+		<ul (wheel)="onOptionsWheel($event)" >
+			<ng-container *ngFor="let option of optionList.filtered">
+				<ng-container [ngSwitch]="(option.label.length)*10>width-40">
+					<ng-container  *ngSwitchCase="true">
+						<li
+										[ngClass]="{'highlighted': option.highlighted, 'selected': option.selected, 'disabled': option.disabled}"
+										[ngStyle]="getOptionStyle(option)"
+										(click)="onOptionClick(option)"
+										(mouseover)="onOptionMouseover(option)" title="{{option.label}}">
+						{{option.label}}
+						</li>
+					</ng-container>
+					<ng-container *ngSwitchCase="false">
+						<li
+										[ngClass]="{'highlighted': option.highlighted, 'selected': option.selected, 'disabled': option.disabled}"
+										[ngStyle]="getOptionStyle(option)"
+										(click)="onOptionClick(option)"
+										(mouseover)="onOptionMouseover(option)">
+							{{option.label}}
+						</li>
+					</ng-container>
+				</ng-container>
+
+			</ng-container>
+			<li
+							*ngIf="!optionList.hasShown"
+							class="message">
+				{{notFoundMsg}}
+			</li>
+		</ul>
+	</div>
+</div>

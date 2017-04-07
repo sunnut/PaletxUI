@@ -1,0 +1,49 @@
+<header>
+    <h2>进度条</h2>
+    <label>
+        <p>当一个操作会打断当前界面，或者需要在后台运行，且耗时可能超过2秒时需要给用户呈现进度。</p>
+        <p>进度条分页面版本 200 x 8 px，表格内80 x 8 px，默认状态、异常、成功。</p>
+    </label>
+</header>
+<section>
+    <px-progressbar [percentage]="infoPercent" [type]="'page'" [bartype]="'info'"></px-progressbar>
+    <px-progressbar [percentage]="'70'" [type]="'page'" [bartype]="'warning'"></px-progressbar>
+    <px-progressbar [percentage]="'100'" [type]="'table'" [bartype]="'success'"></px-progressbar>
+    <px-progressbar [percentage]="'70'" [type]="'table'" [bartype]="'warning'"></px-progressbar>
+</section>
+<px-code>
+    <html-code>{{progressbarCode}}</html-code>
+</px-code>
+<section>
+    <h2>配置项参数</h2>
+    <table class="demo">
+        <thead>
+        <tr>
+            <th width="20%">属性</th>
+            <th width="10%">类型</th>
+            <th width="10%">缺省值</th>
+            <th width="60%">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>percentage</td>
+            <td>数字</td>
+            <td>0</td>
+            <td>百分比</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>字符串</td>
+            <td>page</td>
+            <td>场景类型:page 或 table</td>
+        </tr>
+        <tr>
+            <td>bartype</td>
+            <td>字符串</td>
+            <td>info</td>
+            <td>进度条类型:info 或 warning</td>
+        </tr>
+        </tbody>
+    </table>
+</section>

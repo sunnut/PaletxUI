@@ -1,0 +1,34 @@
+<article>
+    <section class="title">
+        PaletxUI {{version}}更新日志
+    </section>
+    <section class="sub-title">
+        <span>更新时间:{{updateTime}}</span>
+        <a>下载此版本></a>
+    </section>
+    <section *ngIf="newContents.length" class="content">
+        <div class="content-title new-content-title">新增内容</div>
+        <hr/>
+        <div *ngFor="let newContent of newContents;let i=index;" class="update-content">
+            <div class="update-item-title">
+                {{i+1}}. {{newContent.title}}
+            </div>
+            <div class="update-item-content">
+                {{newContent.content}}
+            </div>
+        </div>
+    </section>
+    <section *ngIf="bugFixContents.length" class="content">
+        <div class="content-title bug-fix-content-title">修复更新内容</div>
+        <hr/>
+        <div *ngFor="let bugFixContent of bugFixContents;let i=index;" class="update-content">
+            <div class="update-item-title">
+                {{i+1}}. {{bugFixContent.title}}
+            </div>
+            <div class="update-item-content">
+                {{bugFixContent.content}}
+            </div>
+        </div>
+    </section>
+</article>
+

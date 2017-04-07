@@ -1,0 +1,89 @@
+@import '../demo-common';
+
+section {
+  margin: 0;
+}
+
+article {
+  height: 760px;
+  width: 100%;
+  padding-top: 50px;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  background: linear-gradient(to bottom, #6ac4ff, #aadcff);
+  .sub-title {
+    @include font(30px, $font-gray-normal);
+    margin: 80px 0 30px;
+  }
+  .title {
+    @include font(60px, $font-gray-normal);
+  }
+  .image {
+    margin: 40px 0 60px;
+  }
+  button {
+    width: 140px;
+    height: 46px;
+    @include font($font-size-lg, $white-normal);
+    background-color: $blue-normal;
+    text-align: center;
+    border: 0;
+    border-radius: 2px;
+  }
+}
+footer {
+  height: 150px;
+  vertical-align: middle;
+  padding: 30px;
+  text-align: center;
+  .logo {
+    @include font(30px, $font-gray-normal);
+    margin-bottom: 20px;
+    span:last-child {
+      color: $blue-normal;
+    }
+  }
+  .copyright {
+    @include font(14px, $font-gray-light);
+  }
+}
+.waveHorizontals {
+  width: 100%;
+  height: 200px;
+  position:absolute;
+  bottom: 0;
+  overflow:hidden;
+  z-index: -1;
+}
+.waveHorizontal {
+  width: 200%;
+  height: 100%;
+  display: block;
+  position:absolute;
+  animation: move 10s linear infinite;
+}
+.waveHorizontal1 {
+  animation-delay: -2s;
+}
+.waveHorizontal2 {
+  animation-delay: -2s;
+  animation-duration: 5s;
+}
+.waveHorizontal3 {
+  animation-delay: -4s;
+  animation-duration: 5s;
+}
+.waveHorizontal4 {
+  animation-delay: -6s;
+  animation-duration: 5s;
+}
+.waveHorizontal5 {
+  animation-delay: -8s;
+  animation-duration: 5s;
+}
+@keyframes move {
+  0% {		transform: translate(-50%, 0%);}
+  100% {	transform: translate(0%, 0%);}
+}

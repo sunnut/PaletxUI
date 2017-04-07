@@ -1,0 +1,65 @@
+@import 'common';
+
+.px-textarea-container {
+  position: relative;
+  width: 400px;
+}
+
+.px-textarea-class {
+  height: 90px;
+  width: 400px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4d5761;
+  resize: none;
+  padding: 10px;
+  border: 1px solid $gray-grade-4;
+  border-radius: 2px;
+  box-shadow: none;
+  outline: none;
+  &:focus {
+    border-color: $blue-normal;
+    color: $blue-normal;
+    text-shadow: 0 0 0 $font-gray-normal;
+    -webkit-text-fill-color: transparent;
+  }
+  &::-webkit-input-placeholder {
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
+  }
+}
+
+.px-align-tip {
+  vertical-align:top;
+  color:#666;
+  font-size:14px;
+  font-weight: normal;
+}
+
+.px-align-number {
+  position: absolute;
+  right: 4px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1;
+  margin-top: -6px;
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 16px;
+    background-color: white;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #cccccc;
+}

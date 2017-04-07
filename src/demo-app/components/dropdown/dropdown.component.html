@@ -1,0 +1,158 @@
+
+<header>
+	<h1>Dropdown Select 下拉框</h1>
+	<label>下拉框用于选择字符串、对象数组中的某一项</label>
+</header>
+<section>
+	<h2>下拉单选：字符数组输入</h2>
+	<section>
+		<div class="form-group">
+			<div class="form-group-left">
+				<label>字符数组必填内容</label>
+			</div>
+			<px-select
+							[options]="stringArray" [(ngModel)]="selectStringValue" [placeholder]="'请选择'" [width]="400">
+			</px-select>
+		</div>
+	</section>
+	<px-code>
+		<html-code>{{stringArrayHtmlCode}}</html-code>
+		<ts-code>{{stringArrayTsCode}}</ts-code>
+	</px-code>
+</section>
+<section>
+	<h2>下拉多选：字符数组输入</h2>
+	<section>
+		<div class="form-group">
+			<div class="form-group-left">
+				<label>字符数组必填内容</label>
+			</div>
+			<px-select
+							[options]="stringArray" [multiple]="true" [(ngModel)]="selectedMultiStringVaules">
+			</px-select>
+		</div>
+	</section>
+	<px-code>
+		<html-code>{{stringArrayMultiHtmlCode}}</html-code>
+		<ts-code>{{stringArrayTsCode}}</ts-code>
+	</px-code>
+</section>
+<section>
+	<h2>下拉单选：对象数组输入</h2>
+	<section>
+		<div class="form-group">
+			<div class="form-group-left">
+				<label>对象数组必填内容</label>
+			</div>
+			<px-select
+							[options]="objectArray" [displayProperty]="'property2'" [bindProperty]="'property1'" [(ngModel)]="selectedObjectValue" >
+			</px-select>
+		</div>
+	</section>
+	<px-code>
+		<html-code>{{objectArraySingleHtmlCode}}</html-code>
+		<ts-code>{{objectArrayTscode}}</ts-code>
+	</px-code>
+</section>
+<section>
+	<h2>下拉多选：对象数组输入</h2>
+	<section>
+		<div class="form-group">
+			<div class="form-group-left">
+				<label>对象数组必填内容</label>
+			</div>
+			<px-select
+							[options]="objectArray" [multiple]="true" [displayProperty]="'property2'" [bindProperty]="'property1'" [(ngModel)]="selectedMultiObjectValues" >
+			</px-select>
+		</div>
+	</section>
+	<px-code>
+		<html-code>{{objectArrayMultiHtmlCode}}</html-code>
+		<ts-code>{{objectArrayTscode}}</ts-code>
+	</px-code>
+</section>
+
+<section>
+	<h2>下拉禁用</h2>
+	<section>
+		<div class="form-group">
+			<div class="form-group-left">
+				<label>对象数组必填内容</label>
+			</div>
+			<px-select
+							[options]="objectArray"
+							[displayProperty]="'property2'" [bindProperty]="'property1'"
+							[placeholder]="'禁用'"
+							[disabled]="true">
+			</px-select>
+		</div>
+	</section>
+	<px-code>
+	<html-code>{{stringArrayDisableHtmlCode}}</html-code>
+	<ts-code>{{objectArrayTscode}}</ts-code>
+	</px-code>
+</section>
+
+<section>
+	<h2>配置项参数</h2>
+	<table class="demo">
+		<thead>
+		<tr>
+			<th width="20%">属性</th>
+			<th width="10%">类型</th>
+			<th width="10%">缺省值</th>
+			<th width="60%">描述</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>options</td>
+			<td>array</td>
+			<td>[&nbsp;]</td>
+			<td>待下拉框显示的数组</td>
+		</tr>
+		<tr>
+			<td>displayProperty</td>
+			<td>string</td>
+			<td>null</td>
+			<td>对象数组的下拉框要显示的属性值</td>
+		</tr>
+		<tr>
+			<td>bindProperty</td>
+			<td>string</td>
+			<td>null</td>
+			<td>	对象数组的下拉框将要绑定的属性值</td>
+		</tr>
+		<tr>
+			<td>placeholder</td>
+			<td>string</td>
+			<td>请选择</td>
+			<td>placeholder</td>
+		</tr>
+		<tr>
+			<td>ngModel</td>
+			<td></td>
+			<td></td>
+			<td>双向绑定变量</td>
+		</tr>
+		<tr>
+			<td>multiple</td>
+			<td>boolean</td>
+			<td>false</td>
+			<td>是否下拉多选</td>
+		</tr>
+		<tr>
+			<td>width</td>
+			<td>number</td>
+			<td>400</td>
+			<td>下拉框宽度</td>
+		</tr>
+		<tr>
+			<td>disabled</td>
+			<td>boolean</td>
+			<td>false</td>
+			<td>是否禁用</td>
+		</tr>
+		</tbody>
+	</table>
+</section>

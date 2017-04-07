@@ -1,0 +1,13 @@
+@import 'common';
+
+.cascading-input {
+  font-size: 0;
+  *:nth-child(n) {
+    display: inline-block;
+    font-size: $font-size-normal;
+  }
+  .text-input:nth-child(n),
+  .px-select:nth-child(n) {
+    margin-right: 20px;
+  }
+}

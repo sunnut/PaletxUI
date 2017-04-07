@@ -1,0 +1,75 @@
+<header>
+    <h1>Alert 通知</h1>
+    <label>通知按类型分为成功，警告，错误；出现在顶部导航下面，内容页面顶部</label>
+</header>
+<section>
+    <h2>顶部通知</h2>
+    <section>
+        <p>成功通知3秒自动消失</p>
+        <px-button (click)="successAlertShow = true">成功通知</px-button>
+        <px-alert type="success" class="px-alert-on-top" [(show)]="successAlertShow" #success>操作成功，3秒后通知自动消失</px-alert>
+    </section>
+    <section>
+        <p>警告通知需手动关闭</p>
+        <px-button (click)="warningAlertShow = true">警告通知</px-button>
+        <px-alert type="warning" class="px-alert-on-top" [(show)]="warningAlertShow" #warning>警告消息</px-alert>
+    </section>
+    <section>
+        <p>错误通知需手动关闭</p>
+        <px-button (click)="errorAlertShow=true">错误通知</px-button>
+        <px-alert type="error" class="px-alert-on-top" [(show)]="errorAlertShow" #error>错误消息</px-alert>
+    </section>
+    <px-code>
+        <html-code>{{alertCode}}</html-code>
+    </px-code>
+</section>
+<section>
+    <h2>配置项参数</h2>
+    <table class="demo">
+        <thead>
+        <tr>
+            <th width="20%">属性</th>
+            <th width="10%">类型</th>
+            <th width="10%">缺省值</th>
+            <th width="60%">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>type</td>
+            <td>string</td>
+            <td>null</td>
+            <td>通知的类型。可取值：success，warning，error。对应成功通知、警告通知和错误通知。</td>
+        </tr>
+        <tr>
+            <td>show</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>是否显示通知</td>
+        </tr>
+        <tr>
+            <td>disappear</td>
+            <td>number</td>
+            <td>3</td>
+            <td>通知显示几秒后自动消失，仅在成功通知中有效。默认显示3秒钟后自动消失</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<section>
+    <h2>样式</h2>
+    <table class="demo">
+        <thead>
+        <tr>
+            <th width="20%">样式</th>
+            <th width="80%">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>px-alert-on-top</td>
+            <td>通知出现在顶部导航下面，内容页面顶部。</td>
+        </tr>
+        </tbody>
+    </table>
+</section>

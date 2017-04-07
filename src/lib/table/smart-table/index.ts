@@ -1,0 +1,1 @@
+export {ZenapSmartTableModule} from './zenap-smart-table';

@@ -1,0 +1,42 @@
+.ui-radiobutton, .ui-radiobutton-label {
+    /* vertical-align: middle; */
+    display: inline-block;
+    font-size: 14px;
+    color: #7c868d;
+    font-weight: normal;
+    /* vertical-align: bottom; */
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+.ui-radiobutton-box.ui-state-default
+{
+    border: 1px solid #00abff;
+    width: 16px;
+    height: 16px;
+    background: #ffffff;
+    color: #555555;
+}
+.ui-radiobutton-box.ui-state-active {
+    border-width: 5px;
+    border-color: #00abff;
+    background: inherit;
+}
+
+fieldset:disabled .ui-radiobutton-box,
+fieldset:disabled .ui-radiobutton-label,
+.ui-radiobutton-box.ui-state-disabled {
+    border-color: #ddd;
+    cursor: not-allowed !important;
+    opacity: 0.35;
+    filter: alpha(Opacity=35);
+    background-image: none;
+}
+
+
+.ui-radiobutton-icon {
+    display: none;
+}
+px-radiobutton{
+    margin-right: 70px;
+}

@@ -1,0 +1,35 @@
+@import '../../demo-common';
+
+.icon-demo {
+  display: inline-block;
+  margin-right: 82px;
+}
+.icon-title {
+  @include font;
+  margin: 10px 0;
+  text-align: center;
+}
+.icon-img {
+  display: block;
+  height: 194px;
+  width: 194px;
+  background-size: contain;
+}
+.icon-img-base {
+  background: url('../../../images/Vector-Smart-Object-Base.png') no-repeat;
+}
+.icon-img-example {
+  background: url('../../../images/Vector-Smart-Object.png') no-repeat;
+}
+.icon-img1 {
+  background: url('../../../images/Vector-Smart-Object1.png') no-repeat;
+}
+.icon-img2 {
+  background: url('../../../images/Vector-Smart-Object2.png') no-repeat;
+}
+.icon-img3 {
+  background: url('../../../images/Vector-Smart-Object3.png') no-repeat;
+}
+.icon-img4 {
+  background: url('../../../images/Vector-Smart-Object4.png') no-repeat;
+}

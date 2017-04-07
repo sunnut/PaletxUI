@@ -1,0 +1,114 @@
+@import '../styles/common';
+
+$checkbox-size: 16px;
+
+:host {
+  line-height: 20px;
+}
+
+input[type='checkbox'] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: $checkbox-size;
+  height: $checkbox-size;
+  &:hover + .checkbox-indicator {
+    border-color: $blue-normal;
+  }
+  .px-checkbox-disabled &:hover + .checkbox-indicator {
+    border-color: $gray-grade-4;
+  }
+}
+
+input[type='checkbox']:checked {
+  label & + .checkbox-indicator {
+    border-color: $blue-normal;
+    background-color: $blue-normal;
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 6px;
+      height: 10px;
+      border: solid $white-normal;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      left: 5px;
+      top: 5px;
+    }
+  }
+}
+
+input[type='checkbox']:disabled {
+
+  label &:checked + .checkbox-indicator {
+    background-color: $gray-grade-4;
+    border-color: $gray-grade-4;
+  }
+}
+
+.checkbox-indicator {
+  display: inline-block;
+  cursor: pointer;
+  height: $checkbox-size;
+  width: $checkbox-size;
+  border: 1px solid $gray-grade-4;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-right: 6px;
+
+  & + span {
+    @include font($font-size-normal, $font-gray-light);
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  .px-checkbox-checked & {
+    border-color: $blue-normal;
+    background-color: $blue-normal;
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 6px;
+      height: 10px;
+      border: solid $white-normal;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      left: 5px;
+      top: 5px;
+    }
+  }
+  .px-checkbox-disabled & {
+    background-color: $gray-grade-7;
+    cursor: not-allowed;
+    & + span {
+      @include font($font-size-normal, $font-gray-lightest);
+      cursor: not-allowed;
+    }
+  }
+
+  .px-checkbox-checked.px-checkbox-disabled & {
+    background-color: $gray-grade-4;
+    border-color: $gray-grade-4;
+  }
+}
+/*
+for the checkbox bug  for the tick  
+:host(.ng-untouched.ng-valid.ng-dirty)[ng-reflect-model='true'] > label > input + div {
+  border-color: $blue-normal;
+  background-color: $blue-normal;
+}
+:host(.ng-untouched.ng-valid.ng-dirty)[ng-reflect-model='true'] > label > input + div::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 10px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  left: 5px;
+  top: 5px;
+}
+*/

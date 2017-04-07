@@ -1,0 +1,34 @@
+<!-- <ul class="nav" [ngClass]="classMap" (click)="$event.preventDefault()">
+    <li *ngFor="let tabz of tabs" class="nav-item"
+        [class.active]="tabz.active" [class.disabled]="tabz.disabled">
+        <a href class="nav-link"
+           [class.active]="tabz.active" [class.disabled]="tabz.disabled"
+           (click)="tabz.active = true">
+            <span [attr.pxTransclude]="tabz.headingRef">{{tabz.heading}}</span>
+            <span *ngIf="tabz.removable">
+              <span (click)="$event.preventDefault(); removeTab(tabz);" class="glyphicon glyphicon-remove-circle"></span>
+            </span>
+        </a>
+    </li>
+</ul>
+<div class="tab-content">
+    <ng-content></ng-content>
+</div>
+ -->
+
+<ul class="nav" [ngClass]="classMap" (click)="$event.preventDefault()">
+    <li *ngFor="let tabz of tabs" class="nav-item {{tabz.customClass}}"
+      [class.active]="tabz.active" [class.disabled]="tabz.disabled">
+      <a href="javascript:void(0);" class="nav-link"
+        [class.active]="tabz.active" [class.disabled]="tabz.disabled"
+        (click)="tabz.active = true">
+        <span [ngTransclude]="tabz.headingRef">{{tabz.heading}}</span>
+        <span *ngIf="tabz.removable">
+          <span (click)="$event.preventDefault(); removeTab(tabz);" class="glyphicon glyphicon-remove-circle"></span>
+        </span>
+      </a>
+    </li>
+</ul>
+<div class="tab-content">
+  <ng-content></ng-content>
+</div>

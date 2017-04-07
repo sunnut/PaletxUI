@@ -1,0 +1,4 @@
+[gerrit]
+host=gerrit.zte.com.cn
+port=29418
+project=paas/paletxui.git

@@ -1,0 +1,60 @@
+@import 'common';
+
+.px-progress {
+  display: inline-block;
+  background-color: $gray-grade-6;
+  margin: 0 10px 1px 0;
+  border-radius: 6px;
+  overflow: hidden;
+
+  .px-progress-bar {
+    width: 0;
+    height: 8px;
+    transition: width 0.8s ease-in-out;
+    opacity: 0.7;
+  }
+
+  .px-progress-bar-info {
+    background-color: $blue-darkest;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 8px;
+      animation: px-progress-bar-stripes 0.5s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+      background-color: $blue-normal;
+    }
+  }
+
+  .px-progress-bar-warning {
+    background-color: $red-normal;
+  }
+
+  .px-progress-bar-success,
+  .px-progress-bar-info.px-progress-bar-success {
+    background-color: $blue-darkest;
+  }
+}
+
+.px-progress-page {
+  width: 200px;
+}
+
+.px-progress-table {
+  width: 80px;
+}
+
+.px-progress-info {
+  display: inline-block;
+  .px-icon-exclamation-circle {
+    color: $red-normal;
+  }
+}
+
+@keyframes px-progress-bar-stripes {
+  from {width: 0;}
+  to {width: 100%;}
+}

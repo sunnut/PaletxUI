@@ -1,0 +1,111 @@
+<header>
+	<h1>Dropdown Menu 下拉菜单</h1>
+	<label>向下弹出的列表。当页面上的操作命令过多时，用此组件可以收纳操作元素；点击或移入触点，会出现一个下拉菜单；可在列表中进行选择，并执行相应的命令。</label>
+</header>
+<section>
+	<header>
+	<h2>默认场景</h2>
+	<label>
+       下拉菜单的实现只有样式，没有行为。下面展示默认左对齐时，操作菜单(新建项目菜单)、激活菜单(南京一区菜单)、分隔符、菜单组（南京市、上海市两项不可点击）、标准菜单(上海一区等菜单)等的样式使用。菜单最小宽度100px，所有菜单都可以支持图标:参见"默认左侧对齐"菜单中的图标使用。
+       class为operation、active的菜单及通用菜单，都可以绑定routeLink或者click函数。
+    </label>
+    <label>
+       px-dropdown-menubar为最外层class样式，然后其下第一个a标签为一直可见的主菜单。class="px-dropdown-menu"的ul元素用于盛放悬停时下面的一系列各种菜单。其中：
+       class为operation的用于操作菜单，divider用于分隔符，px-dropdown-menugroup用于菜单组，active用于显示选中(较少使用),没有的为通用菜单。
+    </label>
+    <label>
+       注意：默认菜单左侧设置了font-awesome图标，图标和内容有6px间距,但是此展示页面可能没有引入相关css，导致无法显示图标。实际使用时图标引入参照下面html用法即可。
+    </label>
+	</header>
+	<section>
+	<div class="px-dropdown-menubar">
+	  <a><i class="fa fa-sitemap fa-lg"></i>默认左侧对齐<span class="caret"></span></a>
+	  <ul class="px-dropdown-menu">
+	    <li class="operation"><a>新建项目</a></li>
+	    <li class="divider"></li>
+	    <li class="px-dropdown-menugroup"><a>南京市</a></li>
+	    <li class="active" (click)="userInfo()"><a>南京一区</a></li>
+	    <li><a>南京雨花台三区</a></li>
+	    <li><a>南京秦淮区</a></li>
+	    <li class="divider"><a></a></li>
+	    <li class="px-dropdown-menugroup"><a>上海市</a></li>
+	    <li><a>上海一区</a></li>
+	    <li><a>上海浦东区</a></li>
+	    <li><a>上海三区</a></li>
+	  </ul>
+	</div>
+	</section>
+	<px-code>
+		<html-code>{{defaultDropdownMenubarCode}}</html-code>
+	</px-code>
+</section>
+<section>
+	<header>
+	<h2>展示最小宽度100px</h2>
+	<label>
+       当菜单和弹出菜单项内容都较少时，两者的宽度都为最小宽度100px
+    </label>
+	</header>
+	<section>
+	<div class="px-dropdown-menubar">
+	  <a>100px<span class="caret"></span></a>
+	  <ul class="px-dropdown-menu">
+	    <li><a>100px</a></li>
+	    <li><a>100px</a></li>
+	    <li><a>100px</a></li>
+	  </ul>
+	</div>
+	</section>
+	<px-code>
+		<html-code>{{minWidthDropdownMenubarCode}}</html-code>
+	</px-code>
+</section>
+<section>
+	<header>
+	<h2>展示菜单右对齐及弹出菜单函数绑定</h2>
+	<label>
+       当弹出菜单位于导航条右上角时，可能需要菜单右对齐。另外，菜单可以绑定操作、链接或者跳转函数.
+       要右对齐，需要增加一个class=px-dropdown-rightalign，另外对于菜单项，可以绑定routerLink指令或者click函数，实现跳转等操作。
+    </label>
+	</header>
+    <section style="font-weight: bolder;font-size: 16px; ">
+       {{operationInfo}}
+    </section>
+	<div class="px-dropdown-menubar px-dropdown-rightalign">
+	  <a>右侧对齐<span class="caret"></span></a>
+	  <ul class="px-dropdown-menu">
+	    <li><a [routerLink]="['./']">比较长的子菜单项</a></li>
+	    <li><a href="javascript:;" (click)="userInfo()">个人信息</a></li>
+	    <li><a href="javascript:;" (click)="changePassword()">修改密码</a></li>
+	    <li><a href="javascript:;" (click)="logOut()">退出登录</a></li>
+	  </ul>
+	</div>
+	<px-code>
+		<html-code>{{rightAlignDropdownMenubarCode}}</html-code>
+		<ts-code>{{rightAlignDropdownMenubarTsCode}}</ts-code>
+	</px-code>
+</section>
+<section>
+	<h2>展示菜单关联选中及高亮菜单</h2>
+	<section>
+       展示怎样用数组方式实现select类似的active菜单效果，实际使用时不一定要自己组装数组，可以采用上面写死的自定义菜单方式。
+    </section>
+    <section style="font-weight: bolder;font-size: 16px; ">
+       {{displayInfo}}
+    </section>
+	<div class="px-dropdown-menubar">
+	  <a>{{selectedItem.menugroup}}-{{selectedItem.label}}<span class="caret"></span></a>
+	  <ul class="px-dropdown-menu">
+	    <li *ngFor="let menuItem of firstMenuItems"
+	        [ngClass]="{'px-dropdown-menugroup': menuItem.type =='menugroup',
+	        'divider': menuItem.type =='divider','operation':menuItem.type =='operation', 'active': checkActiveItem(menuItem)}">
+	      <a *ngIf="menuItem.click" href="javascript:;" (click)="menuItem.click(menuItem)">{{menuItem.label}}</a>
+	      <a *ngIf="!menuItem.click" href="javascript:;">{{menuItem.label}}</a>
+	    </li>
+	  </ul>
+	</div>
+	<px-code>
+		<html-code>{{bindDropdownMenubarCode}}</html-code>
+		<ts-code>{{bindDropdownMenubarTsCode}}</ts-code>
+	</px-code>
+</section>

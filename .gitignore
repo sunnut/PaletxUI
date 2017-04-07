@@ -1,0 +1,37 @@
+# compiled output
+/dist
+/temp
+/typings
+/deploy
+
+# dependencies
+/node_modules
+/bower_components
+
+# Dart
+/.pub
+/.packages
+/packages
+/pubspec.lock
+/src/.pub
+/src/.packages
+/src/packages
+/src/pubspec.lock
+error.txt
+*.swp
+
+# IDEs
+/.idea
+/.vscode
+
+# misc
+.DS_Store
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/.chrome
+node_modules.tar.gz
+/ts-node-*

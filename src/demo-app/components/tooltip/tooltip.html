@@ -1,0 +1,89 @@
+<header>
+    <h1>Tooltip 文字提示</h1>
+    <label>简单的文字提示气泡框；鼠标移入则显示提示，移出消失，气泡浮层不承载复杂文本和操作</label>
+</header>
+<section>
+    <h2>图标解释提示</h2>
+    <label>针对一些icon图标，鼠标移入提示该图标的文本含义，气泡框的位置分为上下左右，根据具体场景选用即可</label>
+    <section class="pos">
+        <h3 class="pos-h3">位置示意</h3>
+        <div class="pos-top">
+            <a pxTooltip="prompt text" placement="top">Top</a>
+        </div>
+        <div class="pos-mid">
+            <a pxTooltip="prompt text" placement="left">Left</a>
+            <a pxTooltip="prompt text" placement="right" class="pos-mid-right">Right</a>
+        </div>
+        <div class="pos-bot">
+            <a pxTooltip="prompt text" placement="bottom">Bottom</a>
+        </div>
+    </section>
+    <px-code>
+        <html-code>{{tooltipCode1}}</html-code>
+    </px-code>
+    <h2>文本提示信息</h2>
+    <label>针对一些稀有名词/动词，标签文案不能让用户直观明白理解的，鼠标移入出现气泡框，显示对其描述的文案内容</label>
+    <section class="pos">
+        <h3 class="pos-h3">位置示意</h3>
+        <div class="pos-top">
+            <a tooltipType="textType"
+               pxTooltip="针对一些稀有名词/动词，标签文案不能让用户直观明白理解的，鼠标移入出现气泡框，显示对其描述的文案内容"
+               placement="top">Top</a>
+        </div>
+        <div class="pos-mid">
+            <a tooltipType="textType"
+               pxTooltip="针对一些稀有名词/动词，标签文案不能让用户直观明白理解的，鼠标移入出现气泡框，显示对其描述的文案内容"
+               placement="left">Left</a>
+            <a tooltipType="textType"
+               pxTooltip="针对一些稀有名词/动词，标签文案不能让用户直观明白理解的，鼠标移入出现气泡框，显示对其描述的文案内容"
+               placement="right" class="pos-mid-right">Right</a>
+        </div>
+        <div class="pos-bot">
+            <a tooltipType="textType"
+               pxTooltip="针对一些稀有名词/动词，标签文案不能让用户直观明白理解的，鼠标移入出现气泡框，显示对其描述的文案内容"
+               placement="bottom">Bottom</a>
+        </div>
+    </section>
+    <px-code>
+        <html-code>{{tooltipCode2}}</html-code>
+    </px-code>
+</section>
+<section>
+    <h2>配置项参数</h2>
+    <table class="demo">
+        <thead>
+        <tr>
+            <th width="20%">属性</th>
+            <th width="10%">类型</th>
+            <th width="10%">缺省值</th>
+            <th width="60%">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>pxTooltip</td>
+            <td>string</td>
+            <td></td>
+            <td>提示内容</td>
+        </tr>
+        <tr>
+            <td>tooltipType</td>
+            <td>string:'iconType','textType'</td>
+            <td>iconType</td>
+            <td>提示类型:图标解释提示和文本提示信息,默认图标解释提示</td>
+        </tr>
+        <tr>
+            <td>placement</td>
+            <td>string:'right','bottom','left','top'</td>
+            <td>top</td>
+            <td>提示工具的位置,可选</td>
+        </tr>
+        <tr>
+            <td>delay</td>
+            <td>number</td>
+            <td>300</td>
+            <td>提示工具的延迟，单位ms,可选</td>
+        </tr>
+        </tbody>
+    </table>
+</section>

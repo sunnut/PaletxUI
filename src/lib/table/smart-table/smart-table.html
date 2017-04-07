@@ -1,0 +1,65 @@
+<div class="zenap-smart-table" >
+    <sif-global-filter [columns]="grid.getColumns()" [source]="source" [setting]="settings"></sif-global-filter>
+    <table class="ng2-smart-table table" [id]="settings?.attr?.id"  [ngClass]="[settings?.attr?.class,type]" >
+        <thead *ngIf="!this.settings?.hideHeader|| !settings?.hideSubHeader">
+        <tr class="ng2-smart-titles" *ngIf="!settings.hideHeader">
+            <th class="ng2-smart-th ckbox" *ngIf="settings?.showCheckBox">
+                <label [class.active]="allCheckStatus">
+                    <input type="checkbox" [ngModel]="allCheckStatus" (ngModelChange)="allCheckStatusChange($event)">
+                    <div class="checkbox-indicator"></div>
+                </label>
+            </th>
+            <th class="ng2-smart-th detail" *ngIf="settings?.showDetailControl">
+                {{details}}
+            </th>
+            <th class="ng2-smart-th index" *ngIf="settings?.showRowIndex">
+                {{number}}
+            </th>
+            <th *ngFor="let column of grid.getColumns()" class="ng2-smart-th {{ column.id }}" [ngClass]="column.class">
+                <sif-smart-table-title [source]="source" [column]="column"></sif-smart-table-title>
+            </th>
+        </tr>
+        <tr class="ng2-smart-filters" *ngIf="!settings.hideSubHeader">
+            <th class="ng2-smart-th ckbox" *ngIf="settings.showCheckBox">
+
+            </th>
+            <th class="ng2-smart-th detail" *ngIf="this.settings.showDetailControl">
+                <span></span>
+            </th>
+            <th class="ng2-smart-th index" *ngIf="settings.showRowIndex">
+
+            </th>
+
+            <th *ngFor="let column of grid.getColumns()" class="ng2-smart-th {{ column.id }}">
+                <sif-smart-table-filter [source]="source" [column]="column" ></sif-smart-table-filter>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr #ref *ngFor="let row of grid.getRows();let i=index;"  class="ng2-smart-row" >
+
+            <td *ngIf="this.settings?.showCheckBox" class="ckbox">
+                <sif-smart-table-ckbox [checkStatus]="childrenCheckStatus" [trIndex]="i" [row]="row" (statusChanged)="changeSlectedData($event)"></sif-smart-table-ckbox>
+            </td>
+            <td *ngIf="this.settings?.showDetailControl" class="detail">
+                <sif-detail-control  [columnNumber]="columns" [row]="row" [trIndex]="i"></sif-detail-control>
+            </td>
+            <td *ngIf="this.settings?.showRowIndex" class="index">
+                <span>{{i+1}}</span>
+            </td>
+
+            <td *ngFor="let cell of row.getCells()" class="{{ cell.getColumnClass() }}">
+                <sif-smart-table-cell [cell]="cell" [columns]="columns" [ref]="trRef" [trIndex]="i"></sif-smart-table-cell>
+            </td>
+
+        </tr>
+
+        <tr *ngIf="grid.getRows().length == 0" >
+            <td class='nodata' [attr.colspan]="columns">{{ settings.noDataMessage}}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <sif-smart-table-pager  *ngIf="settings?.pager?.display" [source]="source" [perPage]="settings?.pager?.perPage" [pageStep]="settings?.pager?.pageStep"></sif-smart-table-pager>
+</div>

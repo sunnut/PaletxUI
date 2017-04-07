@@ -1,0 +1,50 @@
+@import '../../demo-common';
+
+ul {
+  line-height: 30px;
+  list-style-type: none;
+  li {
+    @include font($font-size-normal, $font-gray-light, 1.5);
+    &::before {
+      display: inline-block;
+      content: '';
+      left: 0;
+      height: 4px;
+      width: 4px;
+      border-radius: 100%;
+      margin-right: 10px;
+      background-color: $blue-normal;
+      vertical-align: middle;
+    }
+  }
+}
+
+.font-demo {
+  display: inline-block;
+  width: 240px;
+  line-height: 36px;
+  vertical-align: top;
+}
+
+.font-title {
+  margin-bottom: 20px;
+  height: 36px;
+  @include font($font-size-xl, $font-gray-normal);
+}
+
+.font-normal {
+  @include font($font-size-normal, $font-gray-light, 1.5);
+}
+
+.font-xl {
+  @include font($font-size-xl, $font-gray-normal, 1.5);
+  line-height: 1.5;
+}
+
+.font-lg {
+  @include font($font-size-lg, $font-gray-normal, 1.5);
+}
+
+.font-sm {
+  @include font($font-size-sm, $font-gray-light, 1.5);
+}

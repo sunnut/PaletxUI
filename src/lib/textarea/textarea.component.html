@@ -1,0 +1,5 @@
+<div class="px-textarea-container">
+  <textarea class="px-textarea-class" placeholder="{{tipContent}}" (change)="mychange()" [maxlength]="maxContext" [(ngModel)]="textContext"></textarea>
+  <div class="px-align-number" >{{textContext.length}}/{{maxContext}}</div>
+</div>
+

@@ -1,0 +1,274 @@
+@import 'config';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  @include font();
+}
+
+h1 {
+  @include font($font-size-xl, $font-gray-normal);
+  padding-top: 40px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+h2 {
+  @include font($font-size-lg, $font-gray-normal);
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  @include font($font-size-normal, $font-gray-normal);
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+header {
+  h1, h2 {
+    margin-bottom: 10px;
+  }
+  label {
+    @include font($font-size-normal, $font-gray-light);
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+}
+
+section {
+  margin: 20px 0;
+  p {
+    line-height: 1.5;
+  }
+}
+
+table.demo {
+  width: 100%;
+  tr {
+    height: 50px;
+  }
+  th {
+    @include font($font-size-normal, $font-gray-normal);
+    background-color: $gray-grade-8;
+    border: solid 1px $gray-grade-5;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 20px;
+    &:first-child {
+      border-left: 0;
+    }
+    &:last-child {
+      border-right: 0;
+    }
+    &.number {
+      width: 50px;
+      text-align: center;
+      padding: 0;
+    }
+  }
+
+  td {
+    @include font($font-size-normal, $font-gray-light);
+    border-color: $gray-grade-5;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    vertical-align: middle;
+    text-align: left;
+    padding: 0 20px;
+    &:nth-child(1), &:nth-child(2) {
+      width: inherit;
+    }
+    &:last-child {
+      border-right: 0;
+    }
+    &.number {
+      text-align: center;
+      padding: 0;
+    }
+  }
+
+  tbody tr:hover {
+    background-color: #e7f6ff;
+  }
+
+  tbody tr:hover td {
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: #c9e6f2;
+  }
+}
+
+a {
+  color: $blue-normal;
+  text-decoration: none;
+  &:hover {
+    color: $blue-normal;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+
+.icon {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+
+aside {
+  display: inline;
+  margin-top: 50px;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #f2f4f5;
+  border-right: 1px solid $gray-grade-6;
+  overflow-y: auto;
+  & a {
+    @include font($font-size-normal, $font-gray-normal);
+    padding-left: 50px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    list-style-type: none;
+    text-decoration: none;
+    span {
+      vertical-align: middle;
+    }
+  }
+  & a.nav-title {
+    color: $gray-grade-3;
+    cursor: default;
+  }
+  & a.nav-title:hover {
+    background-color: #f2f4f5;
+  }
+  & a.has-icon {
+    padding-left: 20px;
+  }
+  & a.has-caret {
+    &::after {
+      display: inline-block;
+      position: absolute;
+      content: '';
+      right: 10px;
+      height: 50px;
+      width: 10px;
+    }
+  }
+  & a.has-caret.caret-down {
+    &::after {
+      background: url('../../images/tree_arrow_d.png') no-repeat center;
+    }
+    &:hover::after {
+      background: url('../../images/tree_arrow_d_hover.png') no-repeat center;
+    }
+  }
+  & a.has-caret.caret-right {
+    &::after {
+      background: url('../../images/tree_arrow_r.png') no-repeat center;
+    }
+    &:hover::after {
+      background: url('../../images/tree_arrow_r_hover.png') no-repeat center;
+    }
+  }
+  & a:hover {
+    background-color: #eef0f5;
+  }
+  & a.active,
+  & a.active:hover {
+    background-color: $white-normal;
+    color: $blue-normal;
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 4px;
+      height: 40px;
+      background-color: $blue-normal;
+    }
+  }
+  & a.activeByChild {
+    color: $blue-normal;
+  }
+}
+
+/* prism */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+
+.token.punctuation {
+  color: #999;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #a67f59;
+  background: hsla(0, 0%, 100%, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: $blue-normal;
+}
+
+.token.function {
+  color: #dd4a68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}

@@ -1,0 +1,7 @@
+<div class="px-progress" [ngClass]="progress">
+    <div class="px-progress-bar" [ngClass]="progressbar" [style.width]="percentage"></div>
+</div>
+<div class="px-progress-info">
+    <i class="iconfont px-icon-exclamation-circle" *ngIf="bartype === 'warning'"></i>
+    <span *ngIf="bartype !== 'warning'">{{percentage}}</span>
+</div>

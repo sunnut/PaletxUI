@@ -1,0 +1,142 @@
+.ng2-smart-table {
+  font-family: "Microsoft yahei", Segoe UI, Arial ;
+  font-size:12px;
+  line-height: 1.5;
+  color:#333;
+  border-collapse: collapse;
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  word-break: keep-all;
+}
+.ng2-smart-table tr,
+.ng2-smart-table td{
+  border: 1px solid #ddd;
+  vertical-align:middle;
+}
+.ng2-smart-table th,
+.ng2-smart-table td{
+  height:41px;
+}
+.ng2-smart-table td.operation{
+  text-align:center;
+}
+.ng2-smart-th.operation{
+  text-align:center;
+}
+.ng2-smart-table th.number{
+  text-align:right;
+}
+.ng2-smart-table td.number{
+  text-align:right;
+  padding-right:25px;
+}
+.ng2-smart-table .ng2-smart-row .selected {
+  background: rgba(0, 0, 0, 0.05);
+}
+/*modify*/
+.ng2-smart-th{
+  font-family: "Microsoft yahei", Segoe UI, Arial;
+  color:#8b8b8b;
+  text-decoration:none;
+  font-weight: normal;
+  font-size:12px;
+  border: 1px solid #ddd;
+  text-align:left;
+  padding:2px 10px 0px 10px;
+}
+.ng2-smart-filters th.ng2-smart-th {
+  padding-bottom: 1px ;
+}
+.ng2-smart-row td{
+  height:41px;
+  border: 1px solid #ddd;
+  padding:3px 10px;
+}
+
+.ng2-smart-table tr:nth-of-type(odd) {
+  background: #f9f9f9;
+}
+.ng2-smart-table tr:nth-of-type(even) {
+  background: #fff;
+}
+.ng2-smart-table thead tr{
+  background-color: #fff;
+
+}
+.ng2-smart-table tr td.ckbox,
+.ng2-smart-table tr th.ckbox{
+  text-align:center;
+  width:10px ;
+}
+.ng2-smart-table td.ckbox{
+  padding-left:0px ;
+  padding-right:0px ;
+
+}
+.ng2-smart-table  input[type="checkbox"],
+.ng2-smart-table tr td.ckbox label,
+.ng2-smart-table tr th.ckbox label{
+  margin-bottom:0;
+}
+.ng2-smart-table  input[type="checkbox"]{
+  margin-right:0;
+}
+.ng2-smart-table .ng2-smart-th.index,
+.ng2-smart-table td.index,
+.ng2-smart-table .ng2-smart-th.detail,
+.ng2-smart-table td.detail{
+  text-align:center;
+  width:51px;
+}
+.ng2-smart-table.light td,
+.ng2-smart-table.light th,
+.ng2-smart-table.light .ng2-smart-row  td{
+  height:51px;
+  border-left:0 !important;
+  border-right:0 !important;
+}
+.ng2-smart-table.light tr.ng2-smart-filters th.ng2-smart-th{
+  padding-bottom: 10px !important;
+}
+.ng2-smart-table.light .ng2-smart-filter input{
+  height:30px;
+}
+.ng2-smart-table tr td.nodata{
+  text-align:center;
+}
+
+/*card*/
+.ng2-smart-table.card td,
+.ng2-smart-table.card tr{
+  border:0;
+}
+.ng2-smart-table.card tr td{
+  padding-bottom:20px;
+  padding-top:20px;
+  vertical-align:middle;
+}
+.ng2-smart-table.card tr td:first-child{
+  width:8px;
+}
+.ng2-smart-table.card tr td .title{
+  font-size:16px;
+  font-weight:bold;
+}
+
+.ng2-smart-table.card td img{
+  width:60px;
+  height:60px;
+}
+.ng2-smart-table.card th.ng2-smart-th {
+  border:0;
+  background-color:#fff;
+}
+.ng2-smart-table.card .ng2-smart-th.img{
+  width:120px;
+}
+.ng2-smart-table.card thead tr th{
+  padding-bottom:20px;
+  padding-top:20px;
+}

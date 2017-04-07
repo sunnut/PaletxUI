@@ -1,0 +1,163 @@
+@import 'common';
+
+.px-dropdown-menubar {
+  background-color: $nav-blue-normal;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.px-dropdown-menubar:hover {
+  background-color: $nav-blue-dark;
+}
+
+.px-dropdown-menubar > a {
+  min-width: 100px;
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.px-dropdown-menubar > a > span {
+  margin-left: 10px;
+}
+
+.px-dropdown-menubar a {
+  color: #fff;
+  font-size: 14px;
+}
+
+.px-dropdown-menubar:hover > ul {
+  visibility: visible;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  right: auto;
+}
+
+.px-dropdown-menubar.px-dropdown-rightalign > ul {
+  right: 0;
+  left: auto;
+}
+
+.px-dropdown-menubar.px-dropdown-rightalign:hover > ul {
+  right: 0;
+  left: auto;
+}
+
+.px-dropdown-menubar > ul {
+  position: absolute;
+  visibility: hidden;
+  left: 0;
+  top: 54px;
+  z-index: 1000;
+  float: left;
+  min-width: 100px;
+  padding: 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  -webkit-transition: visibility 0.5s ease-out;
+  -moz-transition: visibility 0.5s ease-out;
+  -o-transition: visibility 0.5s ease-out;
+  -ms-transition: visibility 0.5s ease-out;
+  transition: visibility 0.5s ease-out;
+}
+
+.px-dropdown-menubar > .px-dropdown-menu > li > a {
+  display: block;
+  padding: 0 20px;
+  clear: both;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 36px;
+  color: $font-gray-normal;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.px-dropdown-menubar  a:hover {
+  text-decoration: none;
+}
+
+.px-dropdown-menubar > a:hover {
+  color: white;
+}
+
+.px-dropdown-menubar > a > i {
+  margin-right: 6px;
+}
+
+.px-dropdown-menubar > .px-dropdown-menu > li > a > i {
+  margin-right: 6px;
+}
+
+.px-dropdown-menubar > .px-dropdown-menu > li:first-child {
+  margin-top: 10px;
+}
+
+.px-dropdown-menubar > .px-dropdown-menu > li:last-child {
+  margin-bottom: 10px;
+}
+
+.px-dropdown-menubar .px-dropdown-menu a:hover {
+  background-color: $gray-grade-8;
+  text-decoration: none;
+}
+
+.px-dropdown-menubar .px-dropdown-menu li:hover {
+  background-color: $gray-grade-8;
+}
+
+.px-dropdown-menubar .px-dropdown-menu li.divider {
+  height: 1px;
+  margin: 0 10px;
+  overflow: hidden;
+  background-color: $gray-grade-5;
+}
+
+.px-dropdown-menubar .px-dropdown-menu li.divider:hover {
+  background-color: $gray-grade-5;
+}
+
+.px-dropdown-menubar .px-dropdown-menu > li.operation + li.divider {
+  margin: 0;
+}
+
+.px-dropdown-menubar > .px-dropdown-menu > li.operation > a {
+  color: $blue-normal;
+}
+
+.px-dropdown-menubar > .px-dropdown-menu > li.active {
+  border-left: 3px solid $blue-normal;
+}
+
+.px-dropdown-menubar > .px-dropdown-menu > li.active > a {
+  padding-left: 17px;
+}
+
+.px-dropdown-menubar > .px-dropdown-menu > li.px-dropdown-menugroup:hover {
+  background-color: white;
+}
+
+.px-dropdown-menubar > .px-dropdown-menu > li.px-dropdown-menugroup > a:hover {
+  background-color: white;
+}
+
+.px-dropdown-menubar > .px-dropdown-menu > li.px-dropdown-menugroup > a {
+  color: $font-gray-lightest;
+  cursor: default;
+}
+

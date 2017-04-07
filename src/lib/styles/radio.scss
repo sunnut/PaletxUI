@@ -1,0 +1,49 @@
+
+.px-radio {
+  margin-right: 70px;
+  line-height: 14px;
+}
+.px-radio > input {
+  display: none;
+  cursor:pointer;
+}
+.px-radio > span {
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  display: inline-block;
+  height: 16px;
+  vertical-align: middle;
+  width: 16px;
+  cursor:pointer;
+  margin-right: 6px;
+}
+.px-radio > span:hover {
+  border: 1px solid #00abff;
+}
+.px-radio > input:checked + span {
+  border: 5px solid #00abff;
+}
+.px-radio > input:disabled + span {
+  border: 1px solid #ddd;
+  background-color: #f2f2f2;
+  cursor:not-allowed;
+}
+.px-radio > input:checked:disabled + span {
+  border: 5px solid #ddd;
+  background-color: #ffffff;
+}
+.px-radio:hover span {
+  border: 1px solid #00abff;
+}
+.px-radio label {
+  font-size: 14px;
+  color:#7c868d;
+  font-weight:normal;
+  vertical-align: bottom;
+  margin-bottom:0px;
+  cursor:pointer;
+}
+.px-radio > input:disabled ~ label {
+  color:#dddddd;
+  cursor:not-allowed;
+}

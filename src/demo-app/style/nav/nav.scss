@@ -1,0 +1,9 @@
+@import '../../demo-common';
+
+.icon-style {
+  background: url('../../images/icon_style_gry.png');
+
+  aside a.activeByChild & {
+    background: url('../../images/icon_style_blue.png');
+  }
+}

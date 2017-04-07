@@ -1,0 +1,62 @@
+<header>
+    <h1>Checkbox 多选框</h1>
+    <label>多选框（Checkbox）也叫“复选框”是一种可同时选中多项的基础控件。提供一个单一选择开关的方法，一个多选框代表一个逻辑的值：它包括一个小框和一个标签（复选框具有简单、可见、和优雅的特点）</label>
+</header>
+<section>
+    <h2>常规单选按钮</h2>
+    <label>多用于表单填写中表示是否关系</label>
+    <div style="margin-top: 20px;">
+        <px-checkbox>诊断测试1</px-checkbox>
+        <px-checkbox style="margin-left: 70px;">诊断测试2</px-checkbox>
+    </div>
+    <h2></h2>
+    <label>禁用状态</label>
+    <div style="margin-top: 20px;">
+        <px-checkbox>正常状态</px-checkbox>
+        <px-checkbox style="margin-left: 80px;" disabled="true">禁用状态</px-checkbox>
+    </div>
+</section>
+<px-code>
+    <html-code>{{checkbox1}}</html-code>
+</px-code>
+<section>
+    <h2>配置项参数</h2>
+    <table class="demo">
+        <thead>
+        <tr>
+            <th width="20%">属性</th>
+            <th width="10%">类型</th>
+            <th width="10%">缺省值</th>
+            <th width="60%">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>disabled</td>
+            <td>string</td>
+            <td>null</td>
+            <td>禁用状态</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>string</td>
+            <td>null</td>
+            <td>名称</td>
+        </tr>
+        <tr>
+            <td>value</td>
+            <td>string</td>
+            <td>null</td>
+            <td>绑定值</td>
+        </tr>
+        <tr>
+            <td>(change)="setCheck(o.value,input.checked)</td>
+            <td>事件</td>
+            <td>null</td>
+            <td>事件函数</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+

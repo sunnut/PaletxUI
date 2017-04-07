@@ -1,0 +1,68 @@
+@import '../demo-common';
+
+.main-content {
+  padding: 0 40px 40px;
+  margin-left: 200px;
+  margin-top: 48px;
+  width: calc(100% - 200px);
+}
+
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  li {
+    float: left;
+    width: 120px;
+    padding-top: 20px;
+    text-align: center;
+    list-style: none;
+    a {
+      @include font($font-size-normal, $white-normal);
+      opacity: 0.6;
+      text-decoration: none;
+    }
+    &:hover a,
+    &.active a {
+      opacity: 1;
+      cursor: pointer;
+    }
+    &:hover::after,
+    &.active::after {
+      content: '';
+      display: block;
+      height: 4px;
+      width: 120px;
+      background-color: $blue-normal;
+      margin-top: 12px;
+    }
+  }
+}
+
+.navbar-fixed-top {
+  position: fixed;
+  border: 0;
+  background-color: #1b2432;
+  height: 50px;
+  margin-bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  width: 200px;
+  font-size: 22px;
+  cursor: default;
+  padding-left: 26px;
+  padding-top: 14px;
+  a {
+    color: $white-normal;
+    text-decoration: none;
+  }
+  a > span:last-child {
+    color: $blue-normal;
+  }
+}

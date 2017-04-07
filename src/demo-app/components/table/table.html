@@ -1,0 +1,121 @@
+﻿<header>
+    <h1>Table 表格</h1>
+    <label>用于展示结构化数据，配合其他控件一起使用，可对数据进行操作。</label>
+</header>
+<section>
+    <header>
+        <h2>表格样式1（行高50PX）</h2>
+        <label>
+            <p>当系统中大部分表格都少于6列、且界面元素较少时推荐使用。可根据需要使用或不使用复选列、序号列、操作列。</p>
+            <p>文字左对齐，数字相关右对齐，序号和操作居中对齐。</p>
+        </label>
+    </header>
+    <section>
+        <px-table [settings]="styleSettings1"></px-table>
+    </section>
+    <section>
+        <p>当数据结构很简单，允许对主要展示的数据内容多行完整展示。若数据结构复杂，且多行数据并非重要信息，推荐放入详情中展示，不要使用多行表格。</p>
+        <px-table [settings]="styleSettings3"></px-table>
+    </section>
+</section>
+<section>
+    <header>
+        <h2>表格样式2（行高40PX）</h2>
+        <label>
+            <p>当系统中大部分表格都大于6列、且界面元素较多时推荐使用。可根据需要使用或不使用复选列、序号列、操作列。</p>
+        </label>
+    </header>
+    <section>
+        <px-table [settings]="styleSettings2"></px-table>
+    </section>
+</section>
+<section>
+    <header>
+        <h2>表格交互1 —— 内容可点击</h2>
+        <label>若表格中的内容可以被点击，文字使用#00abff。</label>
+    </header>
+    <section>
+        <px-table [settings]="actionDemo1"></px-table>
+    </section>
+</section>
+<!--<section>-->
+    <!--<header>-->
+        <!--<h2>表格交互2 —— 内容超长</h2>-->
+        <!--<label>当文字超出单元格时，结尾以...表示。鼠标聚焦在其上时完整显示。</label>-->
+    <!--</header>-->
+    <!--<section>-->
+    <!--</section>-->
+<!--</section>-->
+<section>
+    <header>
+        <h2>表格交互2 —— 排序</h2>
+        <label>若需要，默认情况下以最重要的一列为准进行排序。鼠标聚焦表头可排序项，显示排序图标，点击可改变排序列并排序。</label>
+    </header>
+    <section>
+        <px-table [settings]="actionDemo3"></px-table>
+    </section>
+</section>
+<section>
+    <header>
+        <h2>表格交互3 —— 筛选</h2>
+        <label>若需要进行多种组合筛选，且筛选条件输入比较复杂，推荐使用筛选器与表格组合使用。</label>
+    </header>
+    <section>
+        <px-table [settings]="actionDemo4"></px-table>
+    </section>
+    <!--<section>-->
+        <!--<p>若筛选条件很简单， 可以采用在表头直接进行筛选的方式。鼠标聚焦在表头对应筛选项，显示筛选图标，点击显示筛选列表，去掉勾选隐藏对应内容行。对于有筛选的列，需要有图标标记。</p>-->
+    <!--</section>-->
+</section>
+<!--<section>-->
+    <!--<header>-->
+        <!--<h2>表格交互5 —— 编辑</h2>-->
+        <!--<label>表格允许对单元格内容进行编辑。</label>-->
+    <!--</header>-->
+    <!--<section>-->
+    <!--</section>-->
+<!--</section>-->
+<!--<section>-->
+    <!--<header>-->
+        <!--<h2>表格交互6 —— 表格列自定义列</h2>-->
+        <!--<label>表格可视场景需要，允许用户自定义表格列。允许自定义的表格需在表头右上角显示图标提示。鼠标点击可显示下拉列表选择。</label>-->
+    <!--</header>-->
+    <!--<section>-->
+    <!--</section>-->
+<!--</section>-->
+<section>
+    <header>
+        <h2>表格交互4 —— 展开收起</h2>
+        <!--<label>表格可视场景需要，单行展开收起。 若展开显示的是某项的详细信息，可使用以下方式。</label>-->
+    </header>
+    <section>
+        <p>若展开显示的是子项，可使用以下方式。</p>
+        <px-table [settings]="actionDemo7"></px-table>
+    </section>
+</section>
+<!--<section>-->
+    <!--<header>-->
+        <!--<h2>表格交互8 —— 整行被选中</h2>-->
+        <!--<label>表格允许整行被选中，被选中行的背景色变为#F2F2F2。</label>-->
+    <!--</header>-->
+    <!--<section>-->
+    <!--</section>-->
+<!--</section>-->
+<!--<section>-->
+    <!--<header>-->
+        <!--<h2>表格交互9 —— 当表格底部固定时，表格行可滑动。</h2>-->
+        <!--<label>表格可视场景需要底部固定。表格列可在表头和底部之间进行滑动显示。</label>-->
+    <!--</header>-->
+    <!--<section>-->
+    <!--</section>-->
+<!--</section>-->
+<section>
+    <header>
+        <h2>无表头的表格</h2>
+        <label>在卡片等场景中当数据结构比较简单时，可使用无表头的表格。</label>
+    </header>
+    <section>
+        <px-table [settings]="noHeaderDemo"></px-table>
+    </section>
+</section>
+<!--<sif-smart-table [settings]="settings"></sif-smart-table>-->

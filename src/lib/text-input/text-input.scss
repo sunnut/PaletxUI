@@ -1,0 +1,196 @@
+@import '../styles/common';
+
+$input-width: 400px;
+$input-short-width: 120px;
+$input-height: 36px;
+$padding-left: 10px;
+$border-width: 1px;
+$unit-span-width: 70px;
+$short-unit-span-width: 40px;
+$prefix-span-width: 70px;
+$short-prefix-span-width: 40px;
+
+:host {
+  display: inline-block;
+}
+
+.text-input {
+  height: 36px;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.text-input-with-hint {
+  height: 54px;
+  margin-bottom: -8px;
+  :host(.ng-touched.ng-invalid) & {
+    height: 36px;
+    margin-bottom: 0;
+  }
+}
+
+.text-input-optional {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.text-input-hint {
+  position: absolute;
+  top: 42px;
+  left: 10px;
+  @include font($font-size-sm, $font-gray-light);
+  line-height: $font-size-sm;
+  :host(.ng-touched.ng-invalid) & {
+    display: none;
+  }
+}
+
+.text-input-prefix {
+  @include font($font-size-normal, $font-gray-lightest);
+  display: inline-block;
+  width: $prefix-span-width;
+  height: $input-height;
+  border: 1px solid $gray-grade-4;
+  border-right: 0;
+  text-align: center;
+  vertical-align: bottom;
+  line-height: 36px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  .input-span-focus & {
+    border-color: $blue-normal;
+  }
+  :host(.ng-dirty.ng-invalid.ng-touched) &,
+  :host(.ng-dirty.ng-invalid.ng-touched) .input-span-focus:focus & {
+    border-color: $red-normal;
+  }
+  .short-text-input & {
+    width: $short-prefix-span-width;
+  }
+}
+
+.text-input-unit {
+  @include font($font-size-normal, $font-gray-lightest);
+  display: inline-block;
+  width: $unit-span-width;
+  height: $input-height;
+  border: 1px solid $gray-grade-4;
+  border-left: 0;
+  text-align: center;
+  vertical-align: bottom;
+  line-height: 36px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  .input-span-focus & {
+    border-color: $blue-normal;
+  }
+  :host(.ng-dirty.ng-invalid.ng-touched) &,
+  :host(.ng-dirty.ng-invalid.ng-touched) .input-span-focus:focus & {
+    border-color: $red-normal;
+  }
+  .short-text-input & {
+    width: $short-unit-span-width;
+  }
+}
+
+input[type='text'],
+input[type='password'] {
+  :host(.ng-dirty.ng-invalid.ng-touched) &,
+  &.ng-dirty.ng-invalid.ng-touched {
+    border-color: $red-normal;
+  }
+
+  .short-text-input & {
+    width: $input-short-width;
+  }
+
+  .text-input-with-unit & {
+    width: $input-width - $unit-span-width;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .text-input-with-prefix & {
+    width: $input-width - $prefix-span-width;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .text-input-with-prefix.text-input-with-unit & {
+    width: $input-width - $prefix-span-width - $unit-span-width;
+  }
+
+  .short-text-input.text-input-with-prefix & {
+    width: $input-short-width - $short-prefix-span-width;
+  }
+
+  .short-text-input.text-input-with-unit & {
+    width: $input-short-width - $short-unit-span-width;
+  }
+
+  .short-text-input.text-input-with-prefix.text-input-with-unit & {
+    width: $input-short-width - $short-prefix-span-width - $short-unit-span-width;
+  }
+}
+
+@mixin input-spinner() {
+  cursor: pointer;
+  display: block;
+  font-size: 12px;
+  height: 50%;
+  position: absolute;
+  margin: 0;
+  right: 0;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 18px;
+}
+
+.input-spinner-up {
+  @include input-spinner;
+  top: 0;
+}
+
+.input-spinner-down {
+  @include input-spinner;
+  bottom: 0;
+}
+
+.caret-up {
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid $font-gray-lightest;
+  margin-top: 12px;
+  &:hover, &:active {
+    border-bottom: 4px solid $blue-normal;
+  }
+}
+
+.caret-down {
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid $font-gray-lightest;
+  margin-top: 4px;
+  &:hover, &:active {
+    border-top: 4px solid $blue-normal;
+  }
+}
+
+.input-span {
+  display: inline-block;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  vertical-align: middle;
+}
+
+

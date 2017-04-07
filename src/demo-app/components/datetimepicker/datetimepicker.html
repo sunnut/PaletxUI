@@ -1,0 +1,143 @@
+<header>
+    <h1>时间控件(开发中)</h1>
+    <label>DateTimePicker is an input component to select a date.</label>
+</header>
+<div class="content-section implementation">
+    <div class="ui-g">
+        <div class="ui-g-12 ui-md-4">
+            <h3>仅日期</h3>
+            <px-datetime [(ngModel)]="date1"></px-datetime>
+        </div>
+
+        <div class="ui-g-12 ui-md-4">
+            <h3>日期+时间</h3>
+            <px-datetime [(ngModel)]="date2" [showTime]="true" [showSeconds]="true"></px-datetime>
+        </div>
+
+        <div class="ui-g-12 ui-md-4">
+            <h3>仅时间</h3>
+            <px-datetime [(ngModel)]="date3" [timeOnly]="true" [showSeconds]="true"></px-datetime>
+        </div>
+        <!--<div class="ui-g-12 ui-md-4">
+            <h3>Inline</h3>
+            <px-datetime [(ngModel)]="date4" [showTime]="true" [inline]="true"></px-datetime>
+        </div>-->
+        <!-- <div class="ui-g-12 ui-md-4">
+             <h3>Restrict</h3>
+             <px-datetime [(ngModel)]="date1"></px-datetime>
+         </div>
+
+         <div class="ui-g-12 ui-md-4">
+             <h3>Navigators</h3>
+             <px-datetime [(ngModel)]="date1"></px-datetime>
+         </div>
+
+         <div class="ui-g-12 ui-md-4">
+             <h3>Time</h3>
+             <px-datetime [(ngModel)]="date1"></px-datetime>
+         </div>
+
+         <div class="ui-g-12 ui-md-4">
+             <h3>Time Only</h3>
+             <px-datetime [(ngModel)]="date1"></px-datetime>
+         </div>-->
+    </div>
+</div>
+<px-code>
+    <html-code>{{pcode1}}</html-code>
+</px-code>
+
+<section>
+    <h2>Localization</h2>
+    <label>Localization for different languages and formats is defined by binding the locale settings object to the
+        locale property. Following is the default values for English.</label>
+    <section>
+        <px-code>
+            <html-code>{{pcode2}}</html-code>
+            <ts-code>{{pcode3}}</ts-code>
+        </px-code>
+    </section>
+</section>
+<section>
+    <section>
+        <h2>配置项参数</h2>
+        <table class="demo">
+            <thead>
+            <tr>
+                <th width="20%">属性</th>
+                <th width="10%">类型</th>
+                <th width="10%">缺省值</th>
+                <th width="60%">描述</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>style</td>
+                <td>string</td>
+                <td>null</td>
+                <td>Inline style of the input field.</td>
+            </tr>
+            <tr>
+                <td>placeholder</td>
+                <td>string</td>
+                <td>null</td>
+                <td>placeholder</td>
+            </tr>
+            <tr>
+                <td>readonlyInput</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>设置为true时input框不能输入</td>
+            </tr>
+            <tr>
+                <td>minDate</td>
+                <td>Date</td>
+                <td>null</td>
+                <td>最小可选日期</td>
+            </tr>
+            <tr>
+                <td>maxDate</td>
+                <td>Date</td>
+                <td>null</td>
+                <td>最大可选日期</td>
+            </tr>
+            <tr>
+                <td>showTime</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>设置为true时显示时间选择器</td>
+            </tr>
+            <tr>
+                <td>locale</td>
+                <td>object</td>
+                <td>null</td>
+                <td>时间控件国际化定义对象</td>
+            </tr>
+            <tr>
+                <td>timeOnly</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>设置为true时只显示时间选择器</td>
+            </tr>
+
+            <tr>
+                <td>required</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>当设置为true时，input框内必须有值</td>
+            </tr>
+            <tr>
+                <td>showSeconds</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>时间选择器显示秒</td>
+            </tr>
+            <tr>
+                <td>ngModel</td>
+                <td></td>
+                <td></td>
+                <td>双向绑定变量</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>

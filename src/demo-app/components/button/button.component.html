@@ -1,0 +1,104 @@
+<header>
+    <h1>Buttons 按钮</h1>
+    <label>按钮是用户点击用以进行下一步操作的重要功能图标，通常有默认（正常）、鼠标划过、鼠标点击、不可点击四个状态的区分。</label>
+    <label>按钮命名应当为单词或者短语且各模块统一；分重要按钮、普通按钮、图标按钮、文字按钮</label>
+</header>
+
+<h2>关键按钮</h2>
+<label>一个页面的关键按钮，通常在页面标题的下方，比如创建，添加，导出等。这种类型的按钮里，需要一个小图标。</label>
+<section>
+    <button pxButton type="text" class="ui-button-success" icon="plus" label="常用操作"></button>
+    <button pxButton type="text" class="ui-button-success ui-button-sm" icon="plus" label="常用操作"></button>
+</section>
+<px-code>
+    <html-code>{{pcode1}}</html-code>
+</px-code>
+<h2>普通按钮</h2>
+<label>通常以一组的形式出现，如确认取消， 删除取消。这种情况下，取消按钮视觉上需要弱化。</label>
+<section>
+    <button pxButton type="text" class="ui-button-primary" label="确认"></button>
+    <button pxButton type="text" class="ui-button-info" label="取消"></button>
+    <br/>
+    <br/>
+    <button pxButton type="text" class="ui-button-primary ui-button-sm" label="确认"></button>
+    <button pxButton type="text" class="ui-button-info ui-button-sm" label="取消"></button>
+</section>
+<px-code>
+    <html-code>{{pcode2}}</html-code>
+</px-code>
+<h2></h2>
+<label>在某些重大操作，如删除的情况下，按钮需要变成红色</label>
+<section>
+    <button pxButton type="text" class="ui-button-danger" label="删除"></button>
+    <button pxButton type="text" class="ui-button-info" label="取消"></button>
+    <br/>
+    <br/>
+    <button pxButton type="text" class="ui-button-danger ui-button-sm" label="删除"></button>
+    <button pxButton type="text" class="ui-button-info ui-button-sm" label="取消"></button>
+</section>
+<px-code>
+    <html-code>{{pcode3}}</html-code>
+</px-code>
+
+<h2></h2>
+<label>在表单的必填选项不完整的时候，确认不可点。</label>
+<section>
+    <button pxButton type="text" class="ui-button-primary" label="确认" [disabled]="true"></button>
+    <button pxButton type="text" class="ui-button-info" label="取消"></button>
+    <br/>
+    <br/>
+    <button pxButton type="text" class="ui-button-primary ui-button-sm" label="确认" [disabled]="true"></button>
+    <button pxButton type="text" class="ui-button-info ui-button-sm" label="取消"></button>
+</section>
+<px-code>
+    <html-code>{{pcode4}}</html-code>
+</px-code>
+<h2>状态按钮</h2>
+<label>状态按钮的实现，包括加载，进度，成功和失败状态。</label>
+<section>
+    <button pxButton [state]="myButtonState" type="text" class="ui-button-primary" icon="plus" label="常用操作"></button>
+    <button pxButton [state]="myButtonState" type="text" class="ui-button-primary ui-button-sm" icon="plus" label="常用操作"></button>
+</section>
+<px-code>
+    <html-code>{{pcode5}}</html-code>
+</px-code>
+<h2>附属表格中按钮</h2>
+<label>通常附属在表格中，或是偶尔独立于表格，如刷新按钮。</label>
+<section>
+    <button pxButton type="text" class="ui-button-info" label="表格操作"></button>
+    <button pxButton type="text" class="ui-button-info ui-button-sm" label="表格操作"></button>
+</section>
+<px-code>
+    <html-code>{{pcode6}}</html-code>
+</px-code>
+<h2>标题后的按钮</h2>
+<label>大标题属性的编辑状态设置等等。</label>
+<section>
+    <button pxButton type="text" class="ui-button-info" label="标题旁"></button>
+    <button pxButton type="text" class="ui-button-info ui-button-sm" label="标题旁"></button>
+</section>
+<section>
+    <px-code>
+        <html-code>{{pcode7}}</html-code>
+    </px-code>
+</section>
+
+<h2>附属表格中的split按钮</h2>
+<label>更多操作等等</label>
+<section>
+    <px-splitButton label="编辑" [model]="items"></px-splitButton>
+    <px-splitButton label="编辑" [model]="items" class="ui-splitbutton-sm"></px-splitButton>
+</section>
+<section>
+    <px-code>
+        <html-code>{{pcode8}}</html-code>
+    </px-code>
+</section>
+<section>
+    <h2>配置项参数</h2>
+    <div>需详细配置请参考: <a href="https://www.primefaces.org/primeng/#/button"> PrimeNg(点击跳转)</a></div>
+    
+</section>
+
+
+

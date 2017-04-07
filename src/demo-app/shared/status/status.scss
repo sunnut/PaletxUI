@@ -1,0 +1,19 @@
+@import '../../demo-common';
+
+.status {
+  @include font();
+  span:last-child {
+    padding-left: 6px;
+  }
+  .icon {
+    display: inline-block;
+  }
+  .icon-done {
+    width: 8px;
+    height: 14px;
+    border: solid $green-normal;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    margin-right: 2px;
+  }
+}

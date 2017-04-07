@@ -1,0 +1,151 @@
+<header>
+    <h1>Steps 步骤条</h1>
+    <label>当任务复杂或者存在先后关系时，将其分解成一系列步骤，从而简化任务；引导用户按照流程完成任务的导航条.</label>
+</header>
+<h2>横向步骤条(根据父元素宽度自适应调整)</h2>
+<label>简单／常用的方式，当页面任务繁重复杂，可做分步拆解，点击下一步按钮完成下面的任务内容</label>
+<section style="margin-top: 40px;">
+    <px-steps [activeIndex]="localActiveIndex" [model]="items"></px-steps>
+    <div class="steps-textArea-horizon">
+        <div class="content" *ngIf="localActiveIndex===0">
+            content1
+        </div>
+        <div class="content" *ngIf="localActiveIndex===1">
+            content2
+        </div>
+        <div class="content" *ngIf="localActiveIndex===2">
+            content3
+        </div>
+        <div class="content" *ngIf="localActiveIndex===3">
+            content4
+        </div>
+        <div class="content" *ngIf="localActiveIndex===4">
+            content5
+        </div>
+    </div>
+    <div style="margin-top: 40px;">
+        <div *ngIf="localActiveIndex===0">
+            <px-button [type]="'confirm'" (click)="localActiveIndex=localActiveIndex+1">下一步</px-button>
+            <px-button [type]="'cancel'" >取消</px-button>
+        </div>
+        <div *ngIf="localActiveIndex===1">
+            <px-button [type]="'confirm'" (click)="localActiveIndex=localActiveIndex+1">下一步</px-button>
+            <px-button [type]="'cancel'" (click)="localActiveIndex=localActiveIndex-1">上一步</px-button>
+        </div>
+        <div *ngIf="localActiveIndex===2">
+            <px-button [type]="'confirm'" (click)="localActiveIndex=localActiveIndex+1">下一步</px-button>
+            <px-button [type]="'cancel'" (click)="localActiveIndex=localActiveIndex-1">上一步</px-button>
+        </div>
+        <div *ngIf="localActiveIndex===3">
+            <px-button [type]="'confirm'" (click)="localActiveIndex=localActiveIndex+1">下一步</px-button>
+            <px-button [type]="'cancel'" (click)="localActiveIndex=localActiveIndex-1">上一步</px-button>
+        </div>
+        <div *ngIf="localActiveIndex===4">
+            <px-button [type]="'confirm'" >完成</px-button>
+            <px-button [type]="'cancel'" (click)="localActiveIndex=localActiveIndex-1">上一步</px-button>
+        </div>
+    </div>
+</section>
+<px-code>
+    <html-code>{{code}}</html-code>
+</px-code>
+<h2>竖向步骤条(根据父元素高度自适应调整)</h2>
+<label>简单／常用的方式，当页面任务繁重复杂，可做分步拆解，点击下一步按钮完成下面的任务内容，整体内容始终都在同一窗口界面下显示</label>
+<br/>
+<div class="fatherDiv">
+    <px-steps  [horizon]="false" [model]="items" [activeIndex]="localActiveIndexVertical" style="float: left;"></px-steps>
+    <div style="height: 400px;width: 600px;" class="verticalContent">
+        <div class="content" *ngIf="localActiveIndexVertical===0">
+            content1
+        </div>
+        <div class="content" *ngIf="localActiveIndexVertical===1">
+            content2
+        </div>
+        <div class="content" *ngIf="localActiveIndexVertical===2">
+            content3
+        </div>
+        <div class="content" *ngIf="localActiveIndexVertical===3">
+            content4
+        </div>
+    </div>
+    <div class="buttonGroup">
+        <px-button *ngIf="localActiveIndexVertical === itemLength " [type]="'confirm'">完成</px-button>
+        <px-button *ngIf="localActiveIndexVertical < itemLength " [type]="'confirm'"
+                   (click)="localActiveIndexVertical=localActiveIndexVertical+1">下一步</px-button>
+        <px-button *ngIf="localActiveIndexVertical>0" [type]="'cancel'" (click)="localActiveIndexVertical=localActiveIndexVertical-1">上一步</px-button>
+        <px-button *ngIf="localActiveIndexVertical === 0" [type]="'cancel'">取消</px-button>
+    </div>
+</div>
+<px-code>
+    <html-code>{{codeVeritcal}}</html-code>
+</px-code>
+
+<h2>竖向步骤条(自定义高度)</h2>
+<label>简单／常用的方式，当页面任务繁重复杂，可做分步拆解，点击下一步按钮完成下面的任务内容，整体内容始终都在同一窗口界面下显示</label>
+<br/>
+<div class="fatherDivCustom">
+    <px-steps  [horizon]="false" [model]="items1" [activeIndex]="localActiveIndexVerticalCustom" [customStylesVertical]="'height:100px'" style="float: left;"></px-steps>
+    <div style="height: 400px;width: 600px;margin-top: 0" class="verticalContent">
+        <div class="content" *ngIf="localActiveIndexVerticalCustom===0">
+            content1
+        </div>
+        <div class="content" *ngIf="localActiveIndexVerticalCustom===1">
+            content2
+        </div>
+        <div class="content" *ngIf="localActiveIndexVerticalCustom===2">
+            content3
+        </div>
+        <div class="content" *ngIf="localActiveIndexVerticalCustom===3">
+            content4
+        </div>
+    </div>
+    <div class="buttonGroupCustom">
+        <px-button *ngIf="localActiveIndexVerticalCustom === itemLength " [type]="'confirm'">完成</px-button>
+        <px-button *ngIf="localActiveIndexVerticalCustom < itemLength " [type]="'confirm'"
+                   (click)="localActiveIndexVerticalCustom=localActiveIndexVerticalCustom+1">下一步</px-button>
+        <px-button *ngIf="localActiveIndexVerticalCustom>0" [type]="'cancel'" (click)="localActiveIndexVerticalCustom=localActiveIndexVerticalCustom-1">上一步</px-button>
+        <px-button *ngIf="localActiveIndexVerticalCustom===0" [type]="'cancel'">取消</px-button>
+    </div>
+</div>
+<px-code>
+    <html-code>{{codeVerticalCustom}}</html-code>
+</px-code>
+<section>
+    <h2>配置项参数</h2>
+    <table class="demo">
+        <thead>
+        <tr>
+            <th width="20%">属性</th>
+            <th width="10%">类型</th>
+            <th width="10%">缺省值</th>
+            <th width="60%">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>activeIndex</td>
+            <td>number</td>
+            <td>0</td>
+            <td>设置当前被选中项目</td>
+        </tr>
+        <tr>
+            <td>horizon</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>默认情况下true表示水平,false表示竖直</td>
+        </tr>
+        <tr>
+            <td>model</td>
+            <td>any[]</td>
+            <td>无</td>
+            <td>显示的信息.{{codeModel}}</td>
+        </tr>
+        <tr>
+            <td>customStylesVertical</td>
+            <td>string</td>
+            <td>自定制高度</td>
+            <td>注意字符串的格式,双引号内有单引号[customStylesVertical]="'height:100px'"</td>
+        </tr>
+        </tbody>
+    </table>
+</section>

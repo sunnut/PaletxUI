@@ -1,0 +1,62 @@
+.px-radio {
+  margin-right: 70px;
+  font-size: 14px;
+  line-height: 14px;
+}
+.px-radio > input {
+  display: none;
+}
+.px-radio > span {
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  display: inline-block;
+  height: 14px;
+  margin-right: 6px;
+  vertical-align: middle;
+  width: 14px;
+}
+.px-radio > span:hover {
+  border: 1px solid #00abff;
+}
+.px-radio > input:checked + span {
+  background-color: #00abff;
+  border: 1px solid #00abff;
+}
+.px-radio > input:disabled + span {
+  border: 1px solid #ddd;
+  background-color: #f2f2f2;
+}
+.px-radio > input:checked:disabled + span {
+  background-color: #ddd;
+}
+.px-radio > input:checked + span::after,
+.px-radio > input:checked:disabled + span::after {
+  background-color: #fff;
+  border-radius: 100%;
+  content: '';
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  margin-left: 4px;
+  margin-bottom: 2px;
+}
+.px-radio:hover span {
+  border: 1px solid #00abff;
+}
+.result {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+h2 + label {
+  font-family: 'Hiragino Sans GB', 'Microsoft YaHei', 'Segoe UI', 'Arial', 'san-serif';
+  font-weight: normal;
+  font-size: 14px;
+  color: #7c868d;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+textarea {
+  padding-top: 0;
+}

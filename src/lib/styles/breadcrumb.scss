@@ -1,0 +1,32 @@
+@import 'common';
+
+.px-breadcrumb {
+  @include font($font-size-sm);
+  background: none;
+  padding: 0 0 24px;
+  margin: 0;
+  li {
+    list-style: none;
+    display: inline-block;
+    a {
+      color: $blue-normal;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+    span {
+      &.curLink {
+        color: $font-gray-light;
+      }
+      &.divider {
+        color: $font-gray-lightest;
+        padding: 0 6px;
+      }
+    }
+  }
+  & > li + li::before {
+    display: none;
+  }
+}

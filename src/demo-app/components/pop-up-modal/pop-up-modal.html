@@ -1,0 +1,136 @@
+<header>
+    <h1>POP-UP 弹出框</h1>
+    <p>一种在单独窗口中显示内容的方法，它叠加在应用程序主窗口之上;当应用程序显示一个对话框时,它将操作临时移到了主流程之外，用户的主要关注点转移至弹出框内内容。</p>
+    <p>特性：较页面轻，可以更快回到之前的页面；相对独立，可以完全不影响页面布局；适合解决简单一次性的操作。</p>
+    <!--<p>提供2类设计：1.操作确认类（对于危险操作，如”删除“应该给用户提示，需用户确认） 2.信息提示反馈类。</p>-->
+</header>
+<section>
+    <h2>操作确认</h2>
+    <p>在当前页面打开一个浮层，承载相应的操作。弹出框居蒙层中央，提供两个尺寸，大尺寸一般适用于弹出框内有数据选取，表格等场景。</p>
+    <section>
+        <px-button pxConfirm
+                   confirmType="confirm"
+                   confirmHeader="确定"
+                   rejectLabel="取消"
+                   confirmMessage="我是副标题"
+                   confirmSubMessage="对操作会产生的结果描述性文字写在这。
+                   在当前页面打开一个浮层，承载相应的操作。弹出框居蒙层中央，提供两个尺寸，大尺寸一般适用于弹出框内有数据选取，表格等场景。"
+                   [type]="'cancel'">操作确认
+        </px-button>
+        <px-button style="margin-left: 8px;" [type]="'cancel'" (click)="showDialog()">大尺寸</px-button>
+
+        <px-dialog header="操作名称，如编辑属性、数据选取" [(visible)]="display">
+            <p>The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's
+                wedding.
+                His beloved son Michael has just come home from the war, but does not intend to become part of his
+                father's business.
+                Through Michael's life the nature of the family business becomes clear. The business of the family is
+                just like the head of the family,
+                kind and benevolent to those who give respect,
+                but given to ruthless violence whenever anything stands against the good of the family.</p>
+            <px-footer>
+                <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                    <button pxButton type="text" class="ui-button-primary" (click)="display=false" label="确认"></button>
+                    <button pxButton type="text" class="ui-button-info" (click)="display=false" label="取消"></button>
+                </div>
+            </px-footer>
+        </px-dialog>
+
+    </section>
+    <px-code>
+        <html-code>{{popUpConfirmCode}}</html-code>
+        <ts-code>{{popUpConfirmTsCode}}</ts-code>
+    </px-code>
+    <p style="padding-top: 20px;">父组件或根组件的模板和模块需添加引用,如demo-app.html,demo-app.module.ts</p>
+    <px-code>
+        <html-code>{{appHtmlCode}}</html-code>
+        <ts-code>{{appModuleCode}}</ts-code>
+    </px-code>
+    <!--<px-tabset>-->
+    <!--<px-tab heading="html">-->
+    <!--<textarea class="code" style="height: 200px" readonly>{{popUpConfirmCode}}</textarea>-->
+    <!--</px-tab>-->
+    <!--<px-tab heading="父组件或根组件模板">-->
+    <!--<textarea class="code" style="height: 200px" readonly>{{appHtmlCode}}</textarea>-->
+    <!--</px-tab>-->
+    <!--<px-tab heading="父组件或根组件模块">-->
+    <!--<textarea class="code" style="height: 200px" readonly>{{appModuleCode}}</textarea>-->
+    <!--</px-tab>-->
+    <!--</px-tabset>-->
+    <p style="padding-top: 30px;">对于危险的操作，如“删除”应该给用户提示，需用户确认。</p>
+    <section style="height: auto;">
+        <px-button pxConfirm
+                   confirmType="danger"
+                   confirmHeader="删除"
+                   rejectLabel="取消"
+                   confirmMessage="我是副标题"
+                   confirmSubMessage="对操作会产生的结果描述性文字写在这。
+                   在当前页面打开一个浮层，承载相应的操作。弹出框居蒙层中央，提供两个尺寸，大尺寸一般适用于弹出框内有数据选取，表格等场景。"
+                   [type]="'cancel'">删除
+        </px-button>
+    </section>
+    <px-code>
+        <html-code>{{popUpDeleteCode}}</html-code>
+    </px-code>
+    <!--<p style="margin-top: 30px;">弹出框从界面右侧向左滑出，如用户点击“编辑”等触发。</p>-->
+    <!--<section>-->
+    <!--<px-button pxConfirm [type]="'cancel'">编辑</px-button>-->
+    <!--</section>-->
+</section>
+<section>
+    <h2>配置项参数</h2>
+    <table class="demo">
+        <thead>
+        <tr>
+            <th width="20%">属性</th>
+            <th width="10%">类型</th>
+            <th width="10%">缺省值</th>
+            <th width="60%">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>pxConfirm</td>
+            <td></td>
+            <td></td>
+            <td>属性指令</td>
+        </tr>
+        <tr>
+            <td>confirmHeader</td>
+            <td>string</td>
+            <td>confirmation</td>
+            <td>confirm标题</td>
+        </tr>
+        <tr>
+            <td>confirmMessage</td>
+            <td>string</td>
+            <td>Are you sure...?</td>
+            <td>confirm副标题</td>
+        </tr>
+        <tr>
+            <td>confirmSubMessage</td>
+            <td>string</td>
+            <td></td>
+            <td>confirm提示信息</td>
+        </tr>
+        <tr>
+            <td>acceptLabel</td>
+            <td>string</td>
+            <td>"ConfirmHeader"</td>
+            <td>confirm按钮文本,默认为"confirmHeader"，如果没有填写confirmHeader，则为"是"。</td>
+        </tr>
+        <tr>
+            <td>rejectLabel</td>
+            <td>string</td>
+            <td>"Cancel"</td>
+            <td>confirm按钮文本,默认为"取消"</td>
+        </tr>
+        <tr>
+            <td>confirmType</td>
+            <td>string:"confirm","danger"</td>
+            <td>"confirm"</td>
+            <td>confirm按钮样式,默认为"confirm"</td>
+        </tr>
+        </tbody>
+    </table>
+</section>

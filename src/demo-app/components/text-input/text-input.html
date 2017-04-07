@@ -1,0 +1,275 @@
+<header>
+    <h1>Text Input 文本框</h1>
+    <label>在输入框中单击鼠标会出现插入点光标，我们可以直接在输入框中输入文字或文本信息。用于显示、输入、编辑文本或数值；文本框标签（标签+输入框）；</label>
+    <label>主要分两种形式：单行文本框、多行文本框</label>
+</header>
+<header>
+    <h2>单行文本框</h2>
+    <label>通过鼠标或键盘输入内容，是最基础的表单域的包装。需要用户输入表单域内容时。提供组合型输入框，带搜索的输入框，还可以进行大小选择。</label>
+</header>
+<section>
+    <div class="form-group">
+        <div class="form-group-left">
+            <label>文本：</label>
+        </div>
+        <px-text-input class="form-group-right" [(ngModel)]="textInput" required>
+        </px-text-input>
+    </div>
+    <div class="form-group">
+        <div class="form-group-left">
+            <label>密码：</label>
+        </div>
+        <px-text-input class="form-group-right" type="password" [(ngModel)]="passwordInput" required>
+        </px-text-input>
+    </div>
+    <div class="form-group">
+        <div class="form-group-left">
+            <label>单位组合：</label>
+        </div>
+        <px-text-input class="form-group-right" type="number" [(ngModel)]="numberWithUnitInput" precision="2" unit="unit" required>
+        </px-text-input>
+    </div>
+    <div class="form-group">
+        <div class="form-group-left">
+            <label>数字：</label>
+        </div>
+        <px-text-input class="form-group-right" type="number" [(ngModel)]="numberInput" placeholder="输入数字" shortInput required>
+        </px-text-input>
+    </div>
+    <div class="form-group">
+        <div class="form-group-left">
+            <label>电话号码：</label>
+        </div>
+        <px-text-input class="form-group-right" type="tel" [(ngModel)]="telInput" placeholder="手机号码" maxLength="11" required>
+        </px-text-input>
+    </div>
+    <div class="form-group">
+        <div class="form-group-left">
+            <label>网址：</label>
+        </div>
+        <px-text-input class="form-group-right" type="text" [(ngModel)]="urlInput" prefix="https://"></px-text-input>
+    </div>
+    <div class="form-group">
+        <div class="form-group-left">
+            <label>级联框：</label>
+        </div>
+        <div class="form-group-right cascading-input">
+            <px-text-input  type="text" [(ngModel)]="cascadingInput1" shortInput notShowOption></px-text-input>
+            <px-text-input  type="text" [(ngModel)]="cascadingInput2" shortInput notShowOption></px-text-input>
+            <px-text-input  type="text" [(ngModel)]="cascadingInput3" shortInput notShowOption></px-text-input>
+        </div>
+    </div>
+</section>
+<px-code>
+    <html-code>{{inputCode}}</html-code>
+</px-code>
+<section>
+    <h2>配置项参数</h2>
+    <table class="demo">
+        <thead>
+        <tr>
+            <th width="20%">属性</th>
+            <th width="10%">类型</th>
+            <th width="10%">缺省值</th>
+            <th width="60%">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>id</td>
+            <td>string</td>
+            <td>null</td>
+            <td>id</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>string</td>
+            <td>null</td>
+            <td>名称</td>
+        </tr>
+        <tr>
+            <td>ngModel</td>
+            <td></td>
+            <td></td>
+            <td>双向绑定变量</td>
+        </tr>
+        <tr>
+            <td>placeholder</td>
+            <td>string</td>
+            <td>null</td>
+            <td>占位文本</td>
+        </tr>
+        <tr>
+            <td>hintLabel</td>
+            <td>string</td>
+            <td>null</td>
+            <td>提示性描述</td>
+        </tr>
+        <tr>
+            <td>required</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>是否为必填项。添加required属性时，为必填项，可以进行表单必填校验。</td>
+        </tr>
+        <tr>
+            <td>disabled</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>是否禁用输入框的数据输入。添加disabled属性时，禁止数据输入，为只读模式。</td>
+        </tr>
+        <tr>
+            <td>hintLabel</td>
+            <td>string</td>
+            <td>null</td>
+            <td>提示性描述，当输入框激活时显示。</td>
+        </tr>
+        <tr>
+            <td>notShowOption</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>是否显示（可选）提示。添加notShowOption属性时，不显示（可选）提示，不进行表单必填校验。</td>
+        </tr>
+        <tr>
+            <td>shortInput</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>是否采用短输入框样式。添加shortInput属性时，提供短输入框样式宽度为120px，默认输入框宽度为400px。</td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>string</td>
+            <td>400px</td>
+            <td>自定义输入框宽度, width包括前缀和单位的宽度。</td>
+        </tr>
+        <tr>
+            <td>prefix</td>
+            <td>string</td>
+            <td>null</td>
+            <td>是否显示前缀。如prefix="https://"。</td>
+        </tr>
+        <tr>
+            <td>prefixWidth</td>
+            <td>string</td>
+            <td>70px</td>
+            <td>自定义前缀框宽度。短输入框下前缀框宽度为40px，默认输入框下前缀框宽度为70px。</td>
+        </tr>
+        <tr>
+            <td>unit</td>
+            <td>string</td>
+            <td>null</td>
+            <td>是否显示单位，仅在数值输入即type="number"场景下有效。如unit="GB"。</td>
+        </tr>
+        <tr>
+            <td>unitWidth</td>
+            <td>string</td>
+            <td>70px</td>
+            <td>自定义单位框宽度，短输入框下单位框宽度为40px，默认输入框下单位框宽度为70px。</td>
+        </tr>
+        <tr>
+            <td>precision</td>
+            <td>number</td>
+            <td>0</td>
+            <td>设定小数点后最多保留位数，仅在数值输入即type="number"场景下有效。</td>
+        </tr>
+        <tr>
+            <td>step</td>
+            <td>number</td>
+            <td>1</td>
+            <td>设定步长，仅在数值输入即type="number"场景下有效。</td>
+        </tr>
+        <tr>
+            <td>max</td>
+            <td>number|string</td>
+            <td>null</td>
+            <td>最大值校验，仅在数值输入即type="number"场景下有效。如max="100"或max=100。</td>
+        </tr>
+        <tr>
+            <td>min</td>
+            <td>number|string</td>
+            <td>null</td>
+            <td>最小值校验，仅在数值输入即type="number"场景下有效。如min="100"或min=100。</td>
+        </tr>
+        <tr>
+            <td>maxLength</td>
+            <td>number|string</td>
+            <td>null</td>
+            <td>最大字符串长度校验。如maxLength="100"或maxLength=100。</td>
+        </tr>
+        <tr>
+            <td>minLength</td>
+            <td>number|string</td>
+            <td>null</td>
+            <td>最小字符串长度校验。如minLength="100"或minLength=100。</td>
+        </tr>
+        <tr>
+            <td>ipv4</td>
+            <td>string</td>
+            <td>null</td>
+            <td>IPV4格式校验。添加ipv4属性时，可以进行表单IPV4格式校验。</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<header>
+    <h2>多行文本框</h2>
+    <label>用于输入或编辑长字符串的无约束多行文本框，当超过默认文本域高度时出现垂直滚动条</label>
+</header>
+<section>
+    <div class="form-group">
+        <div class="form-group-left">
+            <label>描述：</label>
+        </div>
+        <px-textarea class="form-group-right" [(textContext)]="inputContent" maxContext="200"></px-textarea>
+    </div>
+    <px-tabset>
+        <px-tab heading="html">
+            <textarea class="code" style="height: 60px" readonly>{{textareaCode}}</textarea>
+        </px-tab>
+    </px-tabset>
+</section>
+<section>
+    <h2>配置项参数</h2>
+    <table class="demo">
+        <thead>
+        <tr>
+            <th width="20%">属性</th>
+            <th width="10%">类型</th>
+            <th width="10%">缺省值</th>
+            <th width="60%">描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>textContext</td>
+            <td>string</td>
+            <td>null</td>
+            <td>双向绑定变量.</td>
+        </tr>
+        <tr>
+            <td>inputcontent</td>
+            <td>string</td>
+            <td>null</td>
+            <td>预先输入的文本.</td>
+        </tr>
+        <tr>
+            <td>tipContent</td>
+            <td>string</td>
+            <td>提示性描述</td>
+            <td>提示性描述.</td>
+        </tr>
+        <tr>
+            <td>maxContext</td>
+            <td>number</td>
+            <td>300</td>
+            <td>数据绑定变量.</td>
+        </tr>
+        <tr>
+            <td>contentNumber</td>
+            <td>number</td>
+            <td>300</td>
+            <td>最大字符个数.</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+

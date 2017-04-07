@@ -1,0 +1,21 @@
+<label style="position: relative;"
+    [class.px-checkbox-indeterminate]="indeterminate"
+    [class.px-checkbox-checked]="checked"
+    [class.px-checkbox-disabled]="disabled"
+    [class.px-checkbox-focused]="hasFocus">
+    <input  type="checkbox"
+            [id]="inputId"
+            [checked]="checked"
+            [disabled]="disabled"
+            [name]="name"
+            [tabIndex]="tabindex"
+            [indeterminate]="indeterminate"
+            (focus)="_onInputFocus()"
+            (blur)="_onInputBlur()"
+            (change)="_onInteractionEvent($event)"
+            (click)="_onInputClick($event)">
+    <div class="checkbox-indicator"></div>
+    <span>
+        <ng-content></ng-content>
+    </span>
+</label>

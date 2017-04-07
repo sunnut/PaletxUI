@@ -1,0 +1,14 @@
+<label class="px-radio">
+  <input type="radio"
+         [id]="inputId"
+         [checked]="checked"
+         [disabled]="disabled"
+         [name]="name"
+         (change)="_onInputChange($event)"
+         (focus)="_onInputFocus()"
+         (blur)="_onInputBlur()" />
+  <span></span>
+  <label>
+  <ng-content></ng-content>
+  </label>
+</label>
